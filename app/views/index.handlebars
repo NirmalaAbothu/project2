@@ -1,0 +1,42 @@
+<h1>{{ message }}</h1>
+
+<div style="width: 60%; margin: 20px auto;">
+<h2>Sign Up Form</h2>
+<form class="sign-up" >
+    <div class="form-group">
+        <label for="userFirstName">First Name</label>
+        <input type="text" class="form-control" id="userFirstName" placeholder="First Name">
+    </div>
+        <div class="form-group">
+        <label for="userLastName">Last Name</label>
+        <input type="text" class="form-control" id="userLastName" placeholder="Last Name">
+    </div>
+    <div class="form-group">
+        <label for="userEmail">Email address</label>
+        <input type="email" class="form-control" id="userEmail" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="userPassword">Password</label>
+        <input type="password" class="form-control" id="userPassword" placeholder="Password">
+    </div>
+    <button id="SignUp-btn" type="submit" class="btn btn-default">Sign Up</button>
+</form>
+</div>
+
+
+<script>
+    $("#SignUp-btn").on('click', function(event) {
+        event.preventDefault()
+        const newUser = {
+            firstName: $("#userFirstName").val().trim(),
+            lastName: $("#userLastName").val().trim(),
+            email: $("#userEmail").val().trim(),
+            password: $("#userPassword").val().trim()
+        }
+        console.log(newUser);
+
+        $.post("/api/createUser", newUser).then(data => {
+            console.log(data);
+        })
+    });
+</script>

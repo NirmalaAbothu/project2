@@ -9,4 +9,5 @@ module.exports = (sequelize, DataTypes) => {
             }
         }
     });
+    return Gifts;
 };

@@ -5,9 +5,16 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1, 30]
+                len: [1]
             }
         },
+        id_user: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        }
     });
 
     Recipients.associate = (models) => {

@@ -1,5 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-    const Receiver = sequelize.define("Receiver", {
+    const Recipient = sequelize.define("Recipient", 
+    {
         
         name: {
             type: DataTypes.STRING,
@@ -10,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
-    Receiver.associate = (models) => {
-        Receiver.belongsTo(models.User, {
+    Recipient.associate = (models) => {
+        Recipient.belongsTo(models.User, {
             foreignKey: "id_user" 
         })
     }

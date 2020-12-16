@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs");
 // Creating our User model
+
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define("User", {
     // The email cannot be null, and must be a proper email before creation
@@ -31,11 +32,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
- 
-  User.hasMany(models.Receiver, {
-      onDelete: "cascade",
-      foreignKey: "id_user"
-  });
+  
+  User.associate = (models) => {
+    User.hasMany(models.Receiver, {
+        onDelete: "cascade",
+        foreignKey: "id_user"
+    });
+  };
 
   User.prototype.validPassword = (password) => {
     return bcrypt.compareSync(password, this.password);

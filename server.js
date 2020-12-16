@@ -28,19 +28,12 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-<<<<<<< HEAD
-// Requiring our routes
-app.use(require("./routes"));
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
-=======
 // // Requiring our routes
 // const routes = require('./app/controller/controller');
 // app.use(routes);
 
 require("./app/routes/html-routes")(app);
 require("./app/routes/api-routes")(app);
->>>>>>> develop
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {

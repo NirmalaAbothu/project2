@@ -32,13 +32,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  
-  User.associate = (models) => {
-    User.hasMany(models.Receiver, {
-        onDelete: "cascade",
-        foreignKey: "id_user"
+
+  User.associate = function(models) {
+    User.hasMany(models.Recipients, {
+      onDelete: "cascade",
+      foreignKey: "id_user"
     });
   };
+ 
+
 
   User.prototype.validPassword = (password) => {
     return bcrypt.compareSync(password, this.password);

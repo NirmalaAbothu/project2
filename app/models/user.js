@@ -31,11 +31,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
- 
-  User.hasMany(models.Receiver, {
+
+  User.associate = function(models) {
+    User.hasMany(models.Recipients, {
       onDelete: "cascade",
       foreignKey: "id_user"
-  });
+    });
+  };
+ 
+
 
   User.prototype.validPassword = (password) => {
     return bcrypt.compareSync(password, this.password);

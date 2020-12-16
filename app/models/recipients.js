@@ -1,19 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
-    const Receiver = sequelize.define("Receiver", {
+    const Recipients = sequelize.define("Recipients", {
         
         name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1, 30]
+                len: [1]
             }
         },
+        id_user: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        }
     });
 
-    Receiver.associate = (models) => {
-        Receiver.belongsTo(models.User, {
+    Recipients.associate = (models) => {
+        Recipients.belongsTo(models.User, {
             foreignKey: "id_user" 
         })
     }
-
+    return Recipients
 };

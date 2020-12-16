@@ -1,0 +1,42 @@
+/* .container {
+     display: block;
+} */
+.special {
+     margin-top: 100px;
+}
+
+.card {
+     font-weight: bold;
+     /* display: block; */
+     margin-top: 5%;
+     /* margin: 0px !important; */
+}
+.card-content {
+     padding: 0px !important;
+}
+
+.newuser {
+     text-align: center;
+     font-size: 15px;
+}
+body {
+     background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-christmas-santa-claus-christmas-poster-merry-christmas-image_20816.jpg");
+}
+.newuser {
+     font-weight: bold;
+}
+footer {
+     text-align: center;
+     /* padding-bottom: 10px;*/
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+}
+
+.page-footer {
+     padding-top: 0;
+}
+
+i {
+     /*position: fixed;*/
+}

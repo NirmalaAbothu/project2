@@ -49,7 +49,7 @@
             }
             console.log(newUser);
 
-            $.post("/api/createUser", newUser).then(data => {
+            $.post("/api/signUp", newUser).then(data => {
                 console.log(data);
                 currentUser = data.id;
             })

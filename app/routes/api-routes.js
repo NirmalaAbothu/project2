@@ -44,6 +44,8 @@ module.exports = app => {
             res.send(response)
         })
     })
+
+    //  Delete????
     app.get('/api/allRecipients/:id_user', (req, res) => {
         db.Recipients.findAll({
             where: {

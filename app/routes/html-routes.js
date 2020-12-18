@@ -13,7 +13,7 @@ module.exports = app => {
             res.redirect("/members")
         }
         let data = {message: "Hello World This is the html routes home page"}
-        res.render("register")
+        res.render("login")
     })
     app.get("/login", function(req, res) {
         // If the user already has an account send them to the members page

@@ -38,7 +38,7 @@ module.exports = app => {
         //   let currentUser = {
         //       id: req.user.id,
         //       full_name: `${req.user.firstName} ${req.user.lastName}`
-        createRecipients()
+        // createRecipients()
         //   }
         db.Recipients.findAll({
             where: {
@@ -64,8 +64,8 @@ module.exports = app => {
             }
 
             // Rendering the members page containing all the recipients for the logged in user.
-            // res.render("members", recipientsData);
-            res.json(recipientsData)
+            res.render("members");
+            // res.json(recipientsData)
         });
 
     });

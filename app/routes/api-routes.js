@@ -46,14 +46,39 @@ module.exports = app => {
     })
 
     //  Delete????
-    app.get('/api/allRecipients/:id_user', (req, res) => {
+    app.get('/api/allRecipients', (req, res) => {
+
+
         db.Recipients.findAll({
             where: {
-                id_user: req.params.id_user
+                id_user: req.user.id,
             },
-            include: [db.User]
-        }).then(function (response) {
-            res.json(response);
+            // include: [db.User]
+        }).then(function (recipients) {
+            // res.json(recipients);
+
+            // Declaring an array to hold all the recipient id and name values as an object for each recipient 
+            const parsedData = []
+            //  If the db response is greater than 0 than...
+            if (recipients.length > 0) {
+                // Loop through the data and push an object containing the recipients id and name values.
+                recipients.forEach(element => {
+                    const data = { id: element.id, name: element.name }
+                    parsedData.push(data)
+                });
+            }
+            // Creating an object to hold the pared data to send out via handlebars.
+            const recipientsData = {
+                recipients: parsedData
+            }
+            res.json(recipientsData)
+        // db.Recipients.findAll({
+        //     where: {
+        //         id_user: req.params.id_user
+        //     },
+        //     include: [db.User]
+        // }).then(function (response) {
+        //     res.json(response);
         });
     })
 

@@ -41,9 +41,11 @@ module.exports = app => {
 
     app.post('/api/newRecipient', (req, res) => {
         db.Recipients.create(req.body).then(response => {
+            console.log(req.body)
             res.send(response)
         })
-    })
+    });
+
     app.get('/api/allRecipients/:id_user', (req, res) => {
         db.Recipients.findAll({
             where: {
@@ -51,8 +53,28 @@ module.exports = app => {
             },
             include: [db.User]
         }).then(function (response) {
+            console.log(response)
             res.json(response);
         });
-    })
+    });
 
+
+    app.post('/api/newGift', (req, res) => {
+        db.Gifts.create(req.body).then(response => {
+            console.log(req.body);
+            res.send(response);
+        })
+    });
+
+
+    app.get('/api/allGifts/:id_recipient', (req, res) => {
+        db.Gifts.findAll({
+            where: {
+                id_recipient: req.params.id_recipient
+            }
+        }).then(function (response) {
+            console.log(response)
+            res.json(response);
+        });
+    });
 }

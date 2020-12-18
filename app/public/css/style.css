@@ -19,9 +19,9 @@
      text-align: center;
      font-size: 15px;
 }
-body {
-     background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-christmas-santa-claus-christmas-poster-merry-christmas-image_20816.jpg");
-}
+/* body {
+     background-image: url("https://images.all-free-download.com/images/graphicthumb/creative_scroll_paper_background_vector_set_544268.jpg");
+} */
 .newuser {
      font-weight: bold;
 }
@@ -35,8 +35,25 @@ footer {
 
 .page-footer {
      padding-top: 0;
+     background-color: #0A7533;
+     
 }
 
 i {
      /*position: fixed;*/
 }
+
+.nav-wrapper {
+     background-color: #0A7533;
+}
+
+.brand-logo {
+     font-family: 'Homemade Apple', cursive;
+
+}
+
+.scroll {
+     height: 20px;
+     width: 20px;
+}
+

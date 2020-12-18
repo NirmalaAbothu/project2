@@ -48,21 +48,6 @@ module.exports = app => {
         }).then(function (recipients) {
             // res.json(recipients);
 
-            // Declaring an array to hold all the recipient id and name values as an object for each recipient 
-            const parsedData = []
-            //  If the db response is greater than 0 than...
-            if (recipients.length > 0) {
-                // Loop through the data and push an object containing the recipients id and name values.
-                recipients.forEach(element => {
-                    const data = { id: element.id, name: element.name }
-                    parsedData.push(data)
-                });
-            }
-            // Creating an object to hold the pared data to send out via handlebars.
-            const recipientsData = {
-                recipients: parsedData
-            }
-
             // Rendering the members page containing all the recipients for the logged in user.
             res.render("members");
             // res.json(recipientsData)

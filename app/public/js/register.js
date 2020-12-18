@@ -11,6 +11,7 @@ $(document).ready(() => {
       event.preventDefault();
 
       if (passwordOne.val().trim() !== passwordTwo.val().trim()) {
+
         alert("Passwords do not match");
 
       } else {
@@ -41,7 +42,9 @@ $(document).ready(() => {
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
     function signUpUser(firstName, lastName, email, password) {
+
       $.post("/api/signup", {
+
         firstName: firstName,
         lastName: lastName,
         email: email,

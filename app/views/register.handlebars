@@ -1,80 +1,79 @@
 <nav>
     <div class="nav-wrapper">
-        <div class="brand-logo center">Naughty or Nice List</div>
+        <a href="#" class="brand-logo">Naughty or Nice</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="login">Login</a></li>
+        </ul>
     </div>
 </nav>
 
-
-<div class="container">
+<main class="container">
     <div class="row">
         <div class="col l3 m3 s12"></div>
         <div class="col l6 m6 s12">
+            <div class="registerForm">
+                <form id="Login">
+                    <div class="card">
+                        <section class="card-action lighten-1 white-text" id='colorChange2'>
+                            <h3 style="text-align: center">
+                                Registration Form
+                            </h3>
+                        </section>
+                        <br>
+                        <div class="card-content">
+                            <section class="form-field moveRight">
 
-            <div class="card">
-                <div class="card-action teal lighten-1 white-text">
-                    <h3 style="text-align: center">
-                        Registration Form
-                    </h3>
-                </div>
-                <div class="card-content">
-                    <div class="form-field">
+                                <i class="small material-icons prefix">account_circle<input type="text"
+                                        id="userfirstname" placeholder="Enter Your First Name" /></i>
 
-                        <i class="small material-icons prefix">account_circle<input type="text" id="userfirstname"
-                                placeholder="Enter FirstName here" /></i>
+                            </section>
+                            <br>
+                            <section class="form-field moveRight">
 
+                                <i class="small material-icons prefix">account_circle<input type="text"
+                                        id="userlastname" placeholder="Enter Your Last Name" /></i>
+
+                            </section>
+                            <br>
+                            <section class="form-field moveRight">
+
+                                <i class="small material-icons prefix">email<input type="text" id="email"
+                                        class="validate" placeholder="Enter Your Email" /></i>
+
+                            </section>
+                            <br>
+                            <section class="form-field moveRight">
+
+                                <i class="small material-icons prefix">lock<input type="password" id="password1"
+                                        placeholder="Enter Your Password" /></i>
+
+                            </section>
+                            <br>
+                            <section class="form-field moveRight">
+
+                                <i class="small material-icons prefix">lock<input type="password" id="password2"
+                                        placeholder="Confirm Password" /></i>
+
+                            </section>
+                            <br>
+                            <section class="form-field">
+                                <button class="btn-large waves-effect waves-light" style="width: 100%"
+                                    id="register-btn">
+                                    Register
+                                </button>
+                            </section>
+                          
+                        </div>
                     </div>
-                    <br />
-                    <div class="form-field">
-
-                        <i class="small material-icons prefix">account_circle<input type="text" id="userlastname"
-                                placeholder="Enter LastName here" /></i>
-
-                    </div>
-                    <br />
-                    <div class="form-field">
-
-                        <i class="small material-icons prefix">email<input type="text" id="email" class="validate"
-                                placeholder="Enter Email here" /></i>
-
-                    </div>
-                    <br />
-                    <div class="form-field">
-
-                        <i class="small material-icons prefix">lock<input type="password" id="password1"
-                                placeholder="Enter Password here" /></i>
-
-                    </div>
-                    <br />
-                    <div class="form-field">
-
-                        <i class="small material-icons prefix">lock<input type="password" id="password2"
-                                placeholder="Confirm Password here" /></i>
-
-                    </div>
-                    <br />
-
-                    <div class="form-field">
-                        <button class="btn-large waves-effect waves-light" style="width: 100%" id="register-btn">
-                            Register
-                        </button>
-                    </div>
-                    <br />
-                </div>
-                {{!--  <div class="newuser">
-                                   Already have an account?Login
-     
-                                   <a href="user.html">here</a>
-                              </div> --}}
+                </form>
             </div>
-
         </div>
     </div>
-</div>
+</main>
 <div class="footer-fixed">
     <footer class="page-footer">
         <div class="footer-copyright">
-            <div class="container">© Copyright</div>
+            <div class="copyright">© Copyright 2020</div>
         </div>
     </footer>
 </div>
-<script src="js/register.js" type="text/javascript"></script>

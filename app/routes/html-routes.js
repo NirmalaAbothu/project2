@@ -20,7 +20,6 @@ module.exports = app => {
         if (req.user) {
             res.redirect("/members")
         }
-
         res.render("login")
     })
     app.get("/login", function (req, res) {

@@ -1,91 +1,63 @@
-          <nav>
-               <div class="nav-wrapper">
-                    <div class="brand-logo center">Naughty or Nice List</div>
-               </div>
-          </nav>
+<nav>
+     <div class="nav-wrapper" id='landingPage'>
+          <div class="brand-logo center">Naughty or Nice</div>
+     </div>
+</nav>
 
-          <div class="container">
-               <div class="row">
-                    <!-- <div class="col s12 m4 offset-m4"> -->
-                    <div class="col s12 m6 l6 offset-m4 offset-l4">
-                         <div class="special">
-                              <form id="Login">
-                                   <div class="card">
-                                        <div
-                                             class="card-action teal lighten-1 white-text"
-                                        >
-                                             <h3 style="text-align: center">
-                                                  Login Form
-                                             </h3>
-                                        </div>
-                                        <div class="card-content">
-                                             <div class="form-field">
-                                                  <i
-                                                       class="small material-icons prefix"
-                                                       >person
-                                                       <input
-                                                            type="text"
-                                                            id="username"
-                                                            placeholder="Enter Username here"
-                                                       />
-                                                  </i>
-                                             </div>
-                                             <br />
-                                             <div class="form-field">
-                                                  <i
-                                                       class="small material-icons prefix"
-                                                       >lock
-                                                       <input
-                                                            type="password"
-                                                            id="password"
-                                                            placeholder="Enter Password here"
-                                                       />
-                                                  </i>
-                                             </div>
-                                             <br />
+<main class="container">
+     <div class="row">
+          <div class="col s12 m6 l6 offset-m4 offset-l3">
+               <div class="special">
+                    <form id="Login">
+                         <div class="card">
+                              <div class="card-action lighten-1 white-text" id='colorChange'>
+                                   <h3 style="text-align: center">
+                                        Login Form
+                                   </h3>
+                              </div>
+                              <br>
+                              <div class="card-content">
+                                   <section class="form-field moveRight">
+                                        <i class="small material-icons prefix">person
+                                             <input type="text" id="username" placeholder="Enter Your User Name" />
+                                        </i>
+                                   </section>
+                                   <br />
+                                   <section class="form-field moveRight">
+                                        <i class="small material-icons prefix">lock
+                                             <input type="password" id="password" placeholder="Enter Your Password" />
+                                        </i>
+                                   </section>
+                                   <br />
 
-                                             <div class="form-field">
-                                                  <label>
-                                                       <input type="checkbox" />
-                                                       <span
-                                                            >Remember me</span
-                                                       > </label
-                                                  ><br />
-                                             </div>
-                                             <br />
-                                             <div class="form-field">
-                                                  <button
-                                                       class="btn-large waves-effect waves-light"
-                                                       style="width: 100%"
-                                                       id="login-btn"
-                                                  >
-                                                       Login
-                                                  </button>
-                                             </div>
-                                             <br />
-                                        </div>
-                                   </div>
-                              </form>
+                                   <section class="form-field moveRight">
+                                        <label>
+                                             <input type="checkbox" />
+                                             <span>Remember me</span> </label><br />
+                                   </section>
+                                   <br>
+                                   <section class="form-field ">
+                                        <button class="btn-large waves-effect waves-light" style="width: 100%"
+                                             id="login-btn">
+                                             Login
+                                        </button>
+                                   </section>
+                              </div>
                          </div>
-                         <div class="newuser">
-                              Not a user?Create a profile
-                              <a href="/register">here</a>
-                         </div>
-                    </div>
+                    </form>
                </div>
+               <section class="newuser">
+                    Not a user? Create a profile
+                    <a href="register.html">here</a>
+               </section>
           </div>
+     </div>
+</main>
 
-          <div class="footer-fixed">
-               <footer class="page-footer">
-                    <div class="footer-copyright">
-                         <div class="container">© Copyright</div>
-                    </div>
-               </footer>
+<div class="footer-fixed">
+     <footer class="page-footer">
+          <div class="footer-copyright">
+               <div class="copyright">© Copyright 2020</div>
           </div>
-          <script src="/js/login.js"></script>
-          <!-- Custom Script -->
-          {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
-
-          <!-- Compiled and minified JavaScript -->
-          
-          
+     </footer>
+</div>

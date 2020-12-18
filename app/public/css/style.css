@@ -1,9 +1,68 @@
-/* .container {
-     display: block;
-} */
+/* GLOBAL STYLING */
+
+.nav-wrapper {
+     background-color: #0A7533;
+}
+
+footer {
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     text-align: left;
+}
+
+.page-footer {
+     padding-top: 0;
+     background-color: #0A7533;
+}
+
+.brand-logo {
+     font-family: 'Homemade Apple', cursive;
+}
+
+.copyright {
+     text-align: left;
+}
+
+/* BEGIN LOGIN PAGE */
+
+#landingPage {
+     text-align: center;
+}
+
 .special {
+     margin-top: 200px;
+}
+
+#colorChange {
+     background-color: #0A7533;
+}
+
+#login-btn {
+     background-color: #0A7533;
+}
+
+.moveRight {
+     padding-left: 20px;
+}
+
+/* END LOGIN PAGE */
+
+/* START REGISTER PAGE */
+
+.registerForm {
      margin-top: 100px;
 }
+
+#colorChange2 {
+     background-color: #0A7533;
+}
+
+#register-btn {
+     background-color: #0A7533;
+}
+
+/* END REGISTER PAGE */
 
 .card {
      font-weight: bold;
@@ -11,6 +70,7 @@
      margin-top: 5%;
      /* margin: 0px !important; */
 }
+
 .card-content {
      padding: 0px !important;
 }
@@ -19,24 +79,20 @@
      text-align: center;
      font-size: 15px;
 }
-body {
-     background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-christmas-santa-claus-christmas-poster-merry-christmas-image_20816.jpg");
-}
+
+/* body {
+     background-image: url("https://images.all-free-download.com/images/graphicthumb/creative_scroll_paper_background_vector_set_544268.jpg");
+} */
+
 .newuser {
      font-weight: bold;
-}
-footer {
-     text-align: center;
-     /* padding-bottom: 10px;*/
-     position: fixed;
-     bottom: 0;
-     width: 100%;
-}
-
-.page-footer {
-     padding-top: 0;
 }
 
 i {
      /*position: fixed;*/
+}
+
+.scroll {
+     height: 20px;
+     width: 20px;
 }

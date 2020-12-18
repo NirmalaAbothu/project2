@@ -21,6 +21,14 @@ module.exports = (sequelize, DataTypes) => {
         Recipients.belongsTo(models.User, {
             foreignKey: "id_user" 
         })
-    }
-    return Recipients
+    };
+
+    Recipients.associate = (models) => {
+        Recipients.hasMany(models.Gifts, {
+          onDelete: "cascade",
+          foreignKey: "id_recipient"
+        });
+      };
+
+    return Recipients;
 };

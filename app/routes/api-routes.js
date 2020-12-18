@@ -23,9 +23,6 @@ module.exports = app => {
     // NEED TO PUT AFTER SETTING ID IN LOCAL STORAGE
     //window.location.replace("/members");
 
-
-
-
     // app.post("/api/signup", function(req, res) {
     //     db.User.create({
     //       email: req.body.email,
@@ -41,18 +38,63 @@ module.exports = app => {
 
     app.post('/api/newRecipient', (req, res) => {
         db.Recipients.create(req.body).then(response => {
+            console.log(req.body)
             res.send(response)
         })
     })
-    app.get('/api/allRecipients/:id_user', (req, res) => {
+
+    //  Delete????
+    app.get('/api/allRecipients', (req, res) => {
         db.Recipients.findAll({
             where: {
-                id_user: req.params.id_user
+                id_user: req.user.id,
             },
-            include: [db.User]
+            // include: [db.User]
+        }).then(function (recipients) {
+            // res.json(recipients);
+
+            // Declaring an array to hold all the recipient id and name values as an object for each recipient 
+            const parsedData = []
+            //  If the db response is greater than 0 than...
+            if (recipients.length > 0) {
+                // Loop through the data and push an object containing the recipients id and name values.
+                recipients.forEach(element => {
+                    const data = { id: element.id, name: element.name }
+                    parsedData.push(data)
+                });
+            }
+            // Creating an object to hold the pared data to send out via handlebars.
+            const recipientsData = {
+                recipients: parsedData
+            }
+            res.json(recipientsData)
+        // db.Recipients.findAll({
+        //     where: {
+        //         id_user: req.params.id_user
+        //     },
+        //     include: [db.User]
+        // }).then(function (response) {
+        //     res.json(response);
+        });
+    });
+
+
+    app.post('/api/newGift', (req, res) => {
+        db.Gifts.create(req.body).then(response => {
+            console.log(req.body);
+            res.send(response);
+        })
+    });
+
+
+    app.get('/api/allGifts/:id_recipient', (req, res) => {
+        db.Gifts.findAll({
+            where: {
+                id_recipient: req.params.id_recipient
+            }
         }).then(function (response) {
+            console.log(response)
             res.json(response);
         });
-    })
-
+    });
 }

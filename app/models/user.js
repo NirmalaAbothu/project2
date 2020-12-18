@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  User.associate = function(models) {
+  User.associate = (models) => {
     User.hasMany(models.Recipients, {
       onDelete: "cascade",
       foreignKey: "id_user"
@@ -42,7 +42,7 @@ module.exports = function(sequelize, DataTypes) {
  
 
 
-  User.prototype.validPassword = (password) => {
+  User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
   };
   

@@ -23,9 +23,6 @@ module.exports = app => {
     // NEED TO PUT AFTER SETTING ID IN LOCAL STORAGE
     //window.location.replace("/members");
 
-
-
-
     // app.post("/api/signup", function(req, res) {
     //     db.User.create({
     //       email: req.body.email,
@@ -41,14 +38,13 @@ module.exports = app => {
 
     app.post('/api/newRecipient', (req, res) => {
         db.Recipients.create(req.body).then(response => {
+            console.log(req.body)
             res.send(response)
         })
     })
 
     //  Delete????
     app.get('/api/allRecipients', (req, res) => {
-
-
         db.Recipients.findAll({
             where: {
                 id_user: req.user.id,
@@ -80,6 +76,25 @@ module.exports = app => {
         // }).then(function (response) {
         //     res.json(response);
         });
-    })
+    });
 
+
+    app.post('/api/newGift', (req, res) => {
+        db.Gifts.create(req.body).then(response => {
+            console.log(req.body);
+            res.send(response);
+        })
+    });
+
+
+    app.get('/api/allGifts/:id_recipient', (req, res) => {
+        db.Gifts.findAll({
+            where: {
+                id_recipient: req.params.id_recipient
+            }
+        }).then(function (response) {
+            console.log(response)
+            res.json(response);
+        });
+    });
 }

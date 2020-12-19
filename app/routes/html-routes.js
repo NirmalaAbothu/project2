@@ -4,12 +4,14 @@ const db = require('../models/index');
 
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-
+// Test for populating db
 const createRecipients = () => {
     for (let i = 0; i < 10; i++) {
         db.Recipients.create(
-            {name: 'person ' + i, 
-            id_user: 1,}
+            {
+                name: 'person ' + i,
+                id_user: 1,
+            }
         )
     }
 }
@@ -29,28 +31,16 @@ module.exports = app => {
         }
         res.render("login");
     });
+
     app.get("/register", (req, res) => {
         res.render("register")
     })
 
     app.get("/members", isAuthenticated, function (req, res) {
-        //   let currentUser = {
-        //       id: req.user.id,
-        //       full_name: `${req.user.firstName} ${req.user.lastName}`
         // createRecipients()
-        //   }
-        db.Recipients.findAll({
-            where: {
-                id_user: req.user.id,
-            },
-            // include: [db.User]
-        }).then(function (recipients) {
-            // res.json(recipients);
 
-            // Rendering the members page containing all the recipients for the logged in user.
-            res.render("members");
-            // res.json(recipientsData)
-        });
+        res.render("members");
+
 
     });
 

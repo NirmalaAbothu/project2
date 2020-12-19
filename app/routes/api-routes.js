@@ -33,7 +33,6 @@ module.exports = app => {
         })
     })
 
-    //  Delete????
     app.get('/api/allRecipients', (req, res) => {
         db.Recipients.findAll({
             where: {

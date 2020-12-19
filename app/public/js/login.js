@@ -36,28 +36,11 @@ $(document).ready(() => {
           });
      };
 
-     // 
      // Snow animation and christmas countdown credit goes to the awesome person below!!!
      //_______________________________https://codepen.io/sashatran/pen/mOWLLB  ______________________________________ 
 
-     const myDate = new Date();
-     const xmas = Date.parse("Dec 25, " + myDate.getFullYear())
-     const today = Date.parse(myDate)
-
-     const daysToChristmas = Math.round((xmas - today) / (1000 * 60 * 60 * 24))
-
-
-     if (daysToChristmas == 0)
-          $('#days').text("It's Christmas!! Merry Christmas!");
-
-     if (daysToChristmas < 0)
-          $('#days').text("Christmas was " + -1 * (daysToChristmas) + " days ago.");
-
-     if (daysToChristmas > 0)
-          $('#days').text(daysToChristmas + " days to Christmas!");
-
      //make snow
-     snowDrop(150, randomInt(1035, 1280));
+     snowDrop(150, randomInt(1035, 2000));
      snow(150, 150);
 
      function snow(num, speed) {
@@ -72,12 +55,12 @@ $(document).ready(() => {
 
      function snowDrop(num, position) {
           if (num > 0) {
-               var drop = '<div class="drop snow" id="drop_' + num + '"></div>';
+               var drop = '<div class="drop dropSnow" id="drop_' + num + '"></div>';
 
                $('body').append(drop);
                $('#drop_' + num).css('left', position);
                num--;
-               snowDrop(num, randomInt(60, 1280));
+               snowDrop(num, randomInt(60, 2000));
           }
      };
 
@@ -86,6 +69,29 @@ $(document).ready(() => {
      };
      // __________________________________________________________________________________________________________
 });
+
+  // 
+     // Snowglobe animation and christmas countdown credit goes to the awesome person below!!!
+     //________________https://codepen.io/cooper5/pen/PoGGXGR ________________________ 
+const countDownDate = new Date("Dec 25, 2020 12:00:00").getTime();
+const x = setInterval(function () {
+   let now = new Date().getTime();
+   let distance = countDownDate - now;
+   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+   let hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+   );
+   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+   document.getElementById("countdown").innerHTML =
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+   if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "EXPIRED";
+   }
+}, 1000);
+// __________________________________________________
+
 
 // $(document).ready(function () {
 //      // Getting jquery references

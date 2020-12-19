@@ -27,9 +27,22 @@ $(document).ready(function () {
           });
      });
 
-     $(".name").on("click", function () {
+     $()
 
+     $("ul").on("click", ".name", function(event) {
+          console.log(event.target)
+          const recipientData = {
+               id: $(this).data("id"),
+               name: $(this).text()
+          }
+
+          displayGiftList(recipientData)
+          console.log(recipient)
+          console.log(recipientName)
+          
      })
+
+
 
 
      // {
@@ -81,8 +94,10 @@ $(document).ready(function () {
 
      // function to display Gifts
 
-     function displayGiftList() {
-          const id = $(this).data - id;
+     function displayGiftList(data) {
+          const {id, name} = data
+          $("#recipName").text(name)
+          // const id = $(this).data - id;
           $.get("/api/allRecipients/" + id).then(function (response) {
                var gifts = response;
                for (let i = 0; i < gifts.Length; i++) {
@@ -101,21 +116,21 @@ $(document).ready(function () {
      // function
 
      // function to display Gifts
-     function displayGiftList() {
-                    const id = $(this).data("id");
-                    $.get("/api/allRecipients/" + id).then(function (response) {
-                         var gifts = response;
-                         for (let i = 0; i < gifts.Length; i++) {
-                              let li = $("<li>");
-                              li.attr("data-id", result[i].id);
-                              li.text(result[i].gift);
-                              let icon = $("<icon>").addClass("small material-icons removeGift").text("check");
-                              li.append(icon)
-                              // <i class="material-icons">add</i>
-                              divEL.append(li);
-                         }
-                    });
-               }
+     // function displayGiftList() {
+     //                const id = $(this).data("id");
+     //                $.get("/api/allRecipients/" + id).then(function (response) {
+     //                     var gifts = response;
+     //                     for (let i = 0; i < gifts.Length; i++) {
+     //                          let li = $("<li>");
+     //                          li.attr("data-id", result[i].id);
+     //                          li.text(result[i].gift);
+     //                          let icon = $("<icon>").addClass("small material-icons removeGift").text("check");
+     //                          li.append(icon)
+     //                          // <i class="material-icons">add</i>
+     //                          divEL.append(li);
+     //                     }
+     //                });
+     //           }
 
      //when user click on one of the recipient names in list ,displayGiftList function will be called
      $(".name").on("click", function(){

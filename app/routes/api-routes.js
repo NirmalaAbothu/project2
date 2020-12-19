@@ -34,6 +34,7 @@ module.exports = app => {
     })
 
     app.get('/api/allRecipients', (req, res) => {
+        console.log(`This is the users id ${req.user.id}`);
         db.Recipients.findAll({
             where: {
                 id_user: req.user.id,

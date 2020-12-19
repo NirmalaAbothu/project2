@@ -42,17 +42,3 @@ db.sequelize.sync().then(() => {
   });
 });
 
-// db.Recipients.create({ name: "Jane", id_user: 1 }, {name: "John", id_user: 1}).then(response => {
-//   console.log(req.body);
-// });
-// db.Recipients.create({name: "John", id_user: 1}).then(response => {
-//   console.log(req.body);
-// });
-
-// db.Gifts.create({ gift: "Chocolates", id_recipient: 1 }, {gift: "Cologne", id_recipient: 2}).then(response => {
-//   console.log(response);
-// });
-
-// db.Gifts.create({gift: "Cologne", id_recipient: 2}).then(response => {
-//   console.log(response);
-// });

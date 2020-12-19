@@ -1,17 +1,8 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-// test
+
 // reference variable
 
 
-// for (var i = 0; i < cityList.length; i++) {
-//      var button = $("<button>");
-//      button.addClass("city");
-//      button.attr("data-name", cityList[i]);
-//      button.text(cityList[i]);
-//      // console.log("city added");
-//      listEL.append(button);
-// }
-// test
 $(document).ready(function () {
 
      // let listEL = $(".collection");
@@ -20,6 +11,7 @@ $(document).ready(function () {
 
      $(".sidenav").sidenav();
      $("#sidenav-1").sidenav({ edge: "left" });
+
 
      $.get("/api/allRecipients").then(data => {
           console.log(data);
@@ -65,11 +57,30 @@ $(document).ready(function () {
      //      }
      // })
 
-     //function
-     function displayRecipientsList(result) {
-          for (let i = 0; i < result.Length; i++) {
-               console.log();
-               console.log();
+     //f
+
+
+//function displayRecipientsList
+
+function displayRecipientsList(result) {
+     for (let i = 0; i < result.Length; i++) {
+          let li = $("<li>");
+          li.addClass("name");
+          li.attr("data-id", result[i].id_recipient);
+          li.text(result[i].name);
+
+          listEL.append(li);
+     }
+}
+
+// function to display Gifts
+
+function displayGiftList() {
+     const id = $(this).data - id;
+     $.get("/api/allRecipients/" + id).then(function (response) {
+          var gifts = response;
+          for (let i = 0; i < gifts.Length; i++) {
+
                let li = $("<li>");
                li.addClass("name");
                li.attr("data-id", result[i].id);

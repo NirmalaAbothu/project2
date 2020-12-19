@@ -4,7 +4,7 @@ module.exports = {
     "development": {
       "username": "root",
       // "password": process.env.DBPASSWORD,
-      "password": 'password',
+      "password": 'EnterYourPassword',
       "database": "xmasList_db",
       "port": 3306,
       "host": "127.0.0.1",
@@ -13,7 +13,7 @@ module.exports = {
     "test": {
       "username": "root",
       // "password": process.env.DBPASSWORD,
-      "password": 'password',
+      "password": process.env.DBPASSWORD,
       "database": "xmasList_db",
       "host": "127.0.0.1",
       "dialect": "mysql"

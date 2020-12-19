@@ -15,16 +15,17 @@ $(document).ready(function () {
 
      $.get("/api/allRecipients").then(data => {
           console.log(data);
-          data.forEach(element => {
-               // console.log(element.id)
-               let li = $("<li>");
-               li.addClass("name");
-               li.attr("data-id", element.id);
-               li.text(element.name);
-               console.log(li);
+          // data.forEach(element => {
+          //      // console.log(element.id)
+          //      let li = $("<li>");
+          //      li.addClass("name");
+          //      li.attr("data-id", element.id);
+          //      li.text(element.name);
+          //      console.log(li);
 
-               recipientsListEl.append(li);
-          });
+          //      recipientsListEl.append(li);
+          // });
+          displayRecipientsList(data)
      });
 
      $(".name").on("click", function () {
@@ -68,15 +69,17 @@ $(document).ready(function () {
 
      //function displayRecipientsList
 
-     function displayRecipientsList(result) {
-          for (let i = 0; i < result.Length; i++) {
+     function displayRecipientsList(data) {
+          data.forEach(element => {
+               // console.log(element.id)
                let li = $("<li>");
                li.addClass("name");
-               li.attr("data-id", result[i].id_recipient);
-               li.text(result[i].name);
+               li.attr("data-id", element.id);
+               li.text(element.name);
+               console.log(li);
 
-               listEL.append(li);
-          }
+               recipientsListEl.append(li);
+          });
      }
 
      // function to display Gifts

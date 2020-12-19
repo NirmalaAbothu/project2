@@ -106,7 +106,6 @@ body {
 ::placeholder {
      color: black;
      font-size: 15px;
-     
 }
 
 #recipientname {
@@ -119,34 +118,23 @@ body {
      border-radius: 10px;
 }
 
-.rlist {
-     /* margin-left: 20%;
-     margin-right: auto;
-     margin-bottom: 20px;
-
-     border-style: ridge;
-     width: 70%;
-     width: 40%; */
-}
-.createlist {
-     border: none;
-     border-style: ridge;
-     width: 70%;
-}
-
 #addlist {
      background-color: #324b77;
      color: #bbd7f5;
      border-radius: 10px;
 }
 
+.collection {
+     width: 500px;
+     border: none;
+}
+
+
+
 /* END MEMBERS PAGE */
 
 /*  Snow animation credit goes to the awesome person below!!! */
 /* _______________________________https://codepen.io/sashatran/pen/mOWLLB  ______________________________________ */
-
-
-@import url('https://fonts.googleapis.com/css?family=Cookie');
 
 
 .drop {
@@ -178,7 +166,7 @@ body {
 
 /*  Snow globe animation and christmas countdown credit goes to the awesome person below!!! */
 /* https://codepen.io/cooper5/pen/PoGGXGR */
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
 
  .o {
 	 position: absolute;

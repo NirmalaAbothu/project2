@@ -1,77 +1,176 @@
-<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Naughty or Nice</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="login">Login</a></li>
-      </ul>
-    </div>
-  </nav>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Naughty or Nice</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li class="active"><a href="#">Members</a></li>
+                
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<ul class="sidenav" id="mobile-demo">
+    <li class="active"><a href="#">Members</a></li>
+    <li>
+        <a href="http://localhost:8080/register">SignUp</a>
+    </li>
+    <li><a href="http://localhost:8080">login</a></li>
+    <li><a href="#">Logout</a></li>
+</ul>
+<!-- side nav -->
+
+
+<!-- LEFT SIDEBAR	 -->
+<ul id="sidenav-1" class="sidenav sidenav-fixed" style="z-index: auto; top: auto; width: fit-content">
+    <li>
+        <a class="subheader">
+            <h4>Recipients</h4>
+        </a>
+    </li>
+ 
+    <li>
+        <form id="createrecipient" style="text-align: center">
+            <!-- <div class="card">
+                              <div class="card-content"> -->
+            <section class="form-field">
+                <i class="small material-icons prefix">person
+                    <input type="text" id="recipientname" placeholder="Enter Recipient Name" />
+                </i>
+            </section>
+            <button type="submit" id="newrecipient">Submit</button>
+        </form>
+    </li>
+</ul>
+
+<!-- main content -->
+<main>
+    <h3 class="center">Your Gift Lists</h3>
+    <p class="center"></p>
+</main>
+<!-- list -->
 
 <div class="container">
     <div class="row">
-        <div class="col s12 m6 l6 offset-m4 offset-l4">
-            {{!-- <ul>
-                {{ #each recipientsData}} 
-                <li data-id="{{ this.id }}"> {{ this.name}}</li>
-                {{ /each}}
-
-            </ul> --}}
-            <div class="card">
-                <div class="card-action teal lighten-1 white-text">
-                    <h3 style="text-align: center">
-                        {{!-- Create a List {{ id }} --}}
-                    </h3>
+        <!-- <div class="col s12 m4 offset-m4"> -->
+        <!-- <div class="col s12 m6 l6 offset-m4 offset-l4"> -->
+        <div class="col s12 m3 l3">
+            <ul class="mylist"></ul>
+            <ul class="collection">
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+            </ul>
+        </div>
+        <div class="col s12 m3 l3">
+            <ul class="collection">
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+            </ul>
+        </div>
+        <div class="col s12 m3 l3">
+            <ul class="collection">
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+            </ul>
+        </div>
+        <div class="col s12 m3 l3">
+            <ul class="collection">
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+                <li class="collection-item">Alvin</li>
+            </ul>
+        </div>
+        <!-- </div> -->
+    </div>
+    <div class="row">
+        <section class="rlist">
+            <form id="createlist" style="text-align: center">
+                <section class="form-field">
+                    <i class="small material-icons prefix">person
+                        <input type="text" id="listname" placeholder="Enter Recipient Name" />
+                    </i>
+                </section>
+                <section class="form-field">
+                    <i class="small material-icons prefix">list
+                        <input type="text" id="listitem1" placeholder="Enter List here" />
+                    </i>
+                </section>
+                <button type="submit" id="addlist">Submit</button>
+            </form>
+        </section>
+    </div>
+    {{!-- Snow globe animation and christmas countdown credit goes to the awesome person below!!! */
+    /* https://codepen.io/cooper5/pen/PoGGXGR --}}
+    <div>
+        <div class="o">
+            <div class="snowing">
+                <div class="snows">
                 </div>
-                <div class="card-content">
-                    <div class="form-field">
-                        <i class="small material-icons prefix">person<input type="text" id="username"
-                                placeholder="Enter Name here" /></i>
+                <div class="collect">
+                    <div class="hat">
+                        <div class="hat2">
+                            <div class="ribbon">
+                            </div>
+                        </div>
                     </div>
-                    <br />
-                    <div class="form-field">
-                        <i class="small material-icons prefix">credit_card<input type="text" id="budget"
-                                placeholder="Enter Bugget here" /></i>
+                    <div class="snowman">
+                        <div class="snowman2">
+                            <div class="button1">
+                                <div class="button2">
+                                </div>
+                                <div class="button3">
+                                </div>
+                            </div>
+                            <div class="hand">
+                                <div class="hand2">
+                                </div>
+                            </div>
+                            <div class="hand3">
+                            </div>
+                            <div class="snowman3">
+                                <div class="eye">
+                                    <div class="carrot">
+                                    </div>
+                                </div>
+                                <div class="eye2">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <br />
-                    <div class="form-field">
-                        <i class="small material-icons prefix">list<input type="text" id="listitem1"
-                                placeholder="Enter Listitem1 here" /></i>
+                </div>
+                <div class="snow">
+                    <div class="snow2">
                     </div>
-                    <br />
-                    <div class="form-field">
-                        <!-- <label for="password">PassWord</label> -->
-                        <i class="small material-icons prefix">list<input type="text" id="listitem2"
-                                placeholder="Enter Listitem2 here" /></i>
+                    <div class="snow3">
                     </div>
-                    <br />
-
-                    <div class="form-field">
-                        <button class="btn-large waves-effect waves-light" style="width: 100%">
-                            Submit
-                        </button>
-                    </div>
-                    <br />
                 </div>
             </div>
         </div>
+        <div class="base">
+            <h5 class='countdown' id="countdown">
+            </h5>
+        </div>
+        <div class="shadow">
+        </div>
     </div>
-    <div class="col s12">
-        <div></div>
-        <ul class="list-group"></ul>
-    </div>
+    {{!-- _____________ --}}
 </div>
+
+
+
 <div class="footer-fixed">
     <footer class="page-footer">
         <div class="footer-copyright">
-            <div class="container">© Copyright 2020</div>
+            <div class="copyright">© Copyright 2020</div>
         </div>
     </footer>
 </div>
-{{!-- <script src="js/user.js" type="text/javascript"></script> --}} <script> 
-    $(document).ready(function() {
-        $.get('/api/allRecipients').then(res => {
-            console.log(res)
-        })
-    })
-
-</script>

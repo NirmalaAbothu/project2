@@ -33,7 +33,13 @@ $(document).ready(function () {
 
                recipientsListEl.append(li);
           });
+     });
+
+     $(".name").on("click", function(){
+
      })
+
+
      // {
      //      console.log(data)
      //      // }).then((res) => {

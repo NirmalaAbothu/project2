@@ -1,38 +1,49 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 
+// reference variable
+let listEL = $(".collection");
+let divEL = $(".giftlist");
+
 $(document).ready(function () {
      $(".sidenav").sidenav();
      $("#sidenav-1").sidenav({ edge: "left" });
 
      $.get("/api/allRecipients").then((res) => {
-          var result = recipients;
-          // The <ul> that we will add <li> elements to:
-          let myList = document.querySelector("ul.mylist");
-
-          // Create an <li> element:
-          for (let i = 0; i < result.Length; i++) {
-               let li = document.createElement("li");
-
-               // Give it the desired classes & attributes:
-               li.classList.add("ui-menu-item");
-               li.setAttribute("name", "menuitem");
-
-               // Now create an <a> element:
-               let a = document.createElement("a");
-
-               // Give it the desired classes & attributes:
-               a.classList.add("ui-all");
-
-               a.innerText = result[i].name; //  <--- the recipient name from the result
-               a.href = app.get("/gifts/:result[i].name");
-               // li.setAttribute()
-
-               // Now add the <a> to the <li>, and add the <li> to the <ul>
-               li.appendChild(a);
-               myList.appendChild(li);
-          }
+          var result = res;
+          displayGiftList(result);
      });
 });
+
+//function displayRecipientsList
+
+function displayRecipientsList(result) {
+     for (let i = 0; i < result.Length; i++) {
+          let li = $("<li>");
+          li.addClass("name");
+          li.attr("data-id", result[i].id_recipient);
+          li.text(result[i].name);
+
+          listEL.append(li);
+     }
+}
+
+// function to display Gifts
+
+function displayGiftList() {
+     const id = $(this).data - id;
+     $.get("/api/allRecipients/" + id).then(function (response) {
+          var gifts = response;
+          for (let i = 0; i < gifts.Length; i++) {
+               let li = $("<li>");
+
+               li.text(result[i].gift);
+               divEL.append(li);
+          }
+     });
+}
+
+//when user click on one of the recipient names in list ,displayGiftList function will be called
+$(document).on("click", ".name", displayGiftList);
 
 $(function () {
      // adding new recipient

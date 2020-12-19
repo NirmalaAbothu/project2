@@ -20,11 +20,11 @@ module.exports = app => {
                 res.status(401).json(err);
             });
     })
-  // Route for logging the user out
-  app.get("/logout", (req, res) => {
-    req.logout();
-    res.redirect("/");
-  });
+    // Route for logging the user out
+    app.get("/logout", (req, res) => {
+        req.logout();
+        res.redirect("/");
+    });
 
     app.post('/api/newRecipient', (req, res) => {
         db.Recipients.create(req.body).then(response => {
@@ -33,14 +33,12 @@ module.exports = app => {
         })
     })
 
-    //  Delete????
     app.get('/api/allRecipients', (req, res) => {
         db.Recipients.findAll({
             where: {
                 id_user: req.user.id,
             }
-            // include: [db.User]
-        }).then( (recipients) => {
+        }).then((recipients) => {
 
             res.json(recipients)
 
@@ -65,5 +63,26 @@ module.exports = app => {
             console.log(response)
             res.json(response);
         });
+    });
+
+    app.get('/api/deleteRecipient/:id_recipient', (req, res) => {
+        db.Recipients.destroy({
+            where: {
+                id: req.params.id_recipient
+            }
+        }).then(response => {
+            res.json(response);
+        });
+    });
+
+    app.get('/api/deleteGift/:id_gift/:id_recipient', (req, res) => {
+        db.Recipients.destroy({
+            where: {
+                id: req.params.id_gift
+            }
+        }).then(response => {
+            res.end(response);
+        });
+
     });
 }

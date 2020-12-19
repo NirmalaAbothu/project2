@@ -5,22 +5,22 @@ $(document).ready(() => {
 
      loginButton.on("click", (event) => {
           event.preventDefault();
-          
+
           const userInfo = {
                email: emailInput.val().trim(),
                password: passwordInput.val().trim()
           };
-          
+
           console.log(emailInput.val());
 
           console.log(userInfo);
-            
+
           if (!userInfo.email || !userInfo.password) {
-               return; 
+               return;
           };
 
           userLogin(userInfo.email, userInfo.password);
-             
+
           emailInput.val("");
           passwordInput.val("");
      })
@@ -35,7 +35,8 @@ $(document).ready(() => {
                console.log(err);
           });
      };
-});
+
+
 
 
 // $(document).ready(function () {

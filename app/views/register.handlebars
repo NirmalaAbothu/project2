@@ -8,67 +8,120 @@
 </nav>
 
 <main class="container">
-    <div class="row">
-        <div class="col l3 m3 s12"></div>
-        <div class="col l6 m6 s12">
-            <div class="registerForm">
-                <form id="Login">
-                    <div class="card">
-                        <section class="card-action lighten-1 white-text" id='colorChange2'>
-                            <h3 style="text-align: center">
-                                Registration Form
-                            </h3>
-                        </section>
-                        <br>
-                        <div class="card-content">
-                            <section class="form-field moveRight">
 
-                                <i class="small material-icons prefix">account_circle<input type="text"
-                                        id="userfirstname" placeholder="Enter Your First Name" /></i>
+    <div class="special">
+        <form id="Login">
+            <div class="card">
+                <section class="card-action lighten-1 white-text" id='colorChange2'>
+                    <h3 style="text-align: center">
+                        Registration Form
+                    </h3>
+                </section>
+                <br>
+                <div class="card-content">
+                    <section class="form-field moveRight">
 
-                            </section>
-                            <br>
-                            <section class="form-field moveRight">
+                        <i class="small material-icons prefix">account_circle<input type="text" id="userfirstname"
+                                placeholder="Enter Your First Name" /></i>
 
-                                <i class="small material-icons prefix">account_circle<input type="text"
-                                        id="userlastname" placeholder="Enter Your Last Name" /></i>
+                    </section>
+                    <br>
+                    <section class="form-field moveRight">
 
-                            </section>
-                            <br>
-                            <section class="form-field moveRight">
+                        <i class="small material-icons prefix">account_circle<input type="text" id="userlastname"
+                                placeholder="Enter Your Last Name" /></i>
 
-                                <i class="small material-icons prefix">email<input type="text" id="email"
-                                        class="validate" placeholder="Enter Your Email" /></i>
+                    </section>
+                    <br>
+                    <section class="form-field moveRight">
 
-                            </section>
-                            <br>
-                            <section class="form-field moveRight">
+                        <i class="small material-icons prefix">email<input type="text" id="email" class="validate"
+                                placeholder="Enter Your Email" /></i>
 
-                                <i class="small material-icons prefix">lock<input type="password" id="password1"
-                                        placeholder="Enter Your Password" /></i>
+                    </section>
+                    <br>
+                    <section class="form-field moveRight">
 
-                            </section>
-                            <br>
-                            <section class="form-field moveRight">
+                        <i class="small material-icons prefix">lock<input type="password" id="password1"
+                                placeholder="Enter Your Password" /></i>
 
-                                <i class="small material-icons prefix">lock<input type="password" id="password2"
-                                        placeholder="Confirm Password" /></i>
+                    </section>
+                    <br>
+                    <section class="form-field moveRight">
 
-                            </section>
-                            <br>
-                            <section class="form-field">
-                                <button class="btn-large waves-effect waves-light" style="width: 100%"
-                                    id="register-btn">
-                                    Register
-                                </button>
-                            </section>
-                          
+                        <i class="small material-icons prefix">lock<input type="password" id="password2"
+                                placeholder="Confirm Password" /></i>
+
+                    </section>
+                    <br>
+                    <section class="form-field">
+                        <button class="btn-large waves-effect waves-light" style="width: 100%" id="register-btn">
+                            Register
+                        </button>
+                    </section>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+    {{!-- Snow globe animation and christmas countdown credit goes to the awesome person below!!! */
+    /* https://codepen.io/cooper5/pen/PoGGXGR --}}
+    <div>
+        <div class="o">
+            <div class="snowing">
+                <div class="snows">
+                </div>
+                <div class="collect">
+                    <div class="hat">
+                        <div class="hat2">
+                            <div class="ribbon">
+                            </div>
                         </div>
                     </div>
-                </form>
+                    <div class="snowman">
+                        <div class="snowman2">
+                            <div class="button1">
+                                <div class="button2">
+                                </div>
+                                <div class="button3">
+                                </div>
+                            </div>
+                            <div class="hand">
+                                <div class="hand2">
+                                </div>
+                            </div>
+                            <div class="hand3">
+                            </div>
+                            <div class="snowman3">
+                                <div class="eye">
+                                    <div class="carrot">
+                                    </div>
+                                </div>
+                                <div class="eye2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="snow">
+                    <div class="snow2">
+                    </div>
+                    <div class="snow3">
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="base">
+            <h5 class='countdown' id="countdown">
+            </h5>
+        </div>
+        <div class="shadow">
+        </div>
     </div>
+    {{!-- _____________ --}}
 </main>
 <div class="footer-fixed">
     <footer class="page-footer">
@@ -77,3 +130,5 @@
         </div>
     </footer>
 </div>
+
+<script src="js/register.js"></script>

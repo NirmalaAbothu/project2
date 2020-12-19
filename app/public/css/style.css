@@ -1,7 +1,7 @@
 /* GLOBAL STYLING */
 
 .nav-wrapper {
-     background-color: #0A7533;
+     background-color: #0a7533;
 }
 
 footer {
@@ -13,11 +13,11 @@ footer {
 
 .page-footer {
      padding-top: 0;
-     background-color: #0A7533;
+     background-color: #0a7533;
 }
 
 .brand-logo {
-     font-family: 'Homemade Apple', cursive;
+     font-family: "Homemade Apple", cursive;
 }
 
 .copyright {
@@ -35,11 +35,11 @@ footer {
 }
 
 #colorChange {
-     background-color: #0A7533;
+     background-color: #0a7533;
 }
 
 #login-btn {
-     background-color: #0A7533;
+     background-color: #0a7533;
 }
 
 .moveRight {
@@ -55,11 +55,11 @@ footer {
 }
 
 #colorChange2 {
-     background-color: #0A7533;
+     background-color: #0a7533;
 }
 
 #register-btn {
-     background-color: #0A7533;
+     background-color: #0a7533;
 }
 
 /* END REGISTER PAGE */
@@ -88,8 +88,12 @@ footer {
      font-weight: bold;
 }
 
-i {
-     /*position: fixed;*/
+.create {
+     text-align: center;
+     font-weight: bold;
+     font-size: 30px;
+     margin-top: 50px;
+     margin-bottom: 40px;
 }
 
 .scroll {
@@ -97,6 +101,55 @@ i {
      width: 20px;
 }
 
+
+/* side navbar */
+
+/* header,
+main,
+footer {
+     padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+     header,
+     main,
+     footer {
+          padding-left: 0;
+     }
+} */
+/* starts sidebar */
+.mynav {
+     margin: 0;
+     max-width: 1280px;
+     width: 90%;
+}
+.mfooter {
+     z-index: auto;
+}
+#recipientname {
+     border: none;
+     border-style: ridge;
+     width: 70%;
+}
+/* .createlist2 {
+     border: none;
+     border-style: ridge;
+     width: 70%;
+} */
+.rlist {
+     margin-left: 20%;
+     margin-right: auto;
+     margin-bottom: 20px;
+
+     border-style: ridge;
+     /* width: 70%; */
+     width: 40%;
+}
+.createlist {
+     border: none;
+     border-style: ridge;
+     width: 70%;
+}
 /*  Snow animation and christmas countdown credit goes to the awesome person below!!! */
 /* _______________________________https://codepen.io/sashatran/pen/mOWLLB  ______________________________________ */
 
@@ -149,3 +202,4 @@ body {
 	100% {top: 1500px; opacity: 0}
 }
 /* _______________________________________________________________________________________________________ */
+

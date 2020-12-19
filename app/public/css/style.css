@@ -20,7 +20,7 @@ footer {
 }
 
 .brand-logo {
-     font-family: 'Homemade Apple', cursive;
+     font-family: 'Cookie', cursive;
      
 
 }
@@ -37,6 +37,14 @@ body {
      overflow: hidden;
 }
 
+.card {
+     font-weight: bold;
+     margin-top: 5%;
+}
+
+.card-content {
+     padding: 0px !important;
+}
 /* BEGIN LOGIN PAGE */
 
 .container {
@@ -68,10 +76,14 @@ body {
      padding-left: 20px;
 }
 
+.newuser {
+     font-weight: bold;
+     text-align: center;
+     font-size: 15px;
+}
 /* END LOGIN PAGE */
 
 /* START REGISTER PAGE */
-
 
 #colorChange2 {
      background-color: #324b77;
@@ -84,106 +96,58 @@ body {
 
 /* END REGISTER PAGE */
 
-.card {
-     font-weight: bold;
-     /* display: block; */
-     margin-top: 5%;
-     /* margin: 0px !important; */
+
+/* START MEMBERS PAGE */
+.sidenav {
+     background-color: #bbd7f5;
 }
 
-.card-content {
-     padding: 0px !important;
-}
 
-.newuser {
-     text-align: center;
+::placeholder {
+     color: black;
      font-size: 15px;
+     
 }
 
-
-.newuser {
-     font-weight: bold;
-}
-
-.create {
-     text-align: center;
-     font-weight: bold;
-     font-size: 30px;
-     margin-top: 50px;
-     margin-bottom: 40px;
-}
-
-.scroll {
-     height: 20px;
-     width: 20px;
-}
-
-
-/*  Snow animation credit goes to the awesome person below!!! */
-/* https://codepen.io/sashatran/pen/mOWLLB */
-
-
-/* side navbar */
-
-/* header,
-main,
-footer {
-     padding-left: 300px;
-}
-
-@media only screen and (max-width: 992px) {
-     header,
-     main,
-     footer {
-          padding-left: 0;
-     }
-} */
-/* starts sidebar */
-.mynav {
-     margin: 0;
-     max-width: 1280px;
-     width: 90%;
-}
-.mfooter {
-     z-index: auto;
-}
 #recipientname {
-     border: none;
-     border-style: ridge;
      width: 70%;
 }
-/* .createlist2 {
-     border: none;
-     border-style: ridge;
-     width: 70%;
-} */
+
+#newrecipient {
+     background-color: #324b77;
+     color: #bbd7f5;
+     border-radius: 10px;
+}
+
 .rlist {
-     margin-left: 20%;
+     /* margin-left: 20%;
      margin-right: auto;
      margin-bottom: 20px;
 
      border-style: ridge;
-     /* width: 70%; */
-     width: 40%;
+     width: 70%;
+     width: 40%; */
 }
 .createlist {
      border: none;
      border-style: ridge;
      width: 70%;
 }
-/*  Snow animation and christmas countdown credit goes to the awesome person below!!! */
+
+#addlist {
+     background-color: #324b77;
+     color: #bbd7f5;
+     border-radius: 10px;
+}
+
+/* END MEMBERS PAGE */
+
+/*  Snow animation credit goes to the awesome person below!!! */
 /* _______________________________https://codepen.io/sashatran/pen/mOWLLB  ______________________________________ */
 
 
 @import url('https://fonts.googleapis.com/css?family=Cookie');
 
-
-#days {
-  font-size: 30px;
-  color: #FFF;
-  text-align: center;
-  letter-spacing: 3px;
-}
 
 .drop {
 	position: absolute;
@@ -262,9 +226,9 @@ footer {
 	 border-left: 25px solid transparent;
 	 border-right: 25px solid transparent;
 	 height: 0;
-	 width: 200px;
-	 margin-top: 48rem;
-	 margin-left: 0rem;
+	 width: 280px;
+	 margin-top: 47rem;
+	 margin-left: 0.66rem;
 	 z-index: 1;
 }
  .shadow {
@@ -274,7 +238,7 @@ footer {
 	 background: #324b77;
 	 border-radius: 50%;
 	 z-index: -1;
-	 margin-top: 51rem;
+	 margin-top: 49.5rem;
 }
  .snowman {
 	 position: absolute;
@@ -461,16 +425,19 @@ footer {
 }
  #countdown {
 	 position: absolute;
-	 width: 150px;
+	 width: 220px;
 	 height: 25px;
 	 border: 2px solid #8d1414;
 	 padding: 3px;
 	 border-radius: 10px;
       background: #eea29a;
       position: absolute;
-	 margin-left: 1.2rem;
-	 margin-top: 0.5rem;
-	 color: #8d1414;
+	 margin-left: .5rem;
+	 margin-top: 1rem;
+      color: #8d1414;
+      font-size: 15px;
+      text-align: center;
+      font-weight: bold;
 }
  
 

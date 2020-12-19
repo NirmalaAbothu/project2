@@ -1,7 +1,9 @@
 /* GLOBAL STYLING */
 
 .nav-wrapper {
+
      background-color: #324b77;
+
 }
 
 footer {
@@ -13,12 +15,14 @@ footer {
 
 .page-footer {
      padding-top: 0;
+
      background-color: #324b77;
 }
 
 .brand-logo {
      font-family: 'Homemade Apple', cursive;
      
+
 }
 
 .copyright {
@@ -51,11 +55,13 @@ body {
 }
 
 #colorChange {
+
      background-color: #324b77;
 }
 
 #login-btn {
      background-color: #324b77;
+
 }
 
 .moveRight {
@@ -73,6 +79,7 @@ body {
 
 #register-btn {
      background-color: #324b77;
+
 }
 
 /* END REGISTER PAGE */
@@ -98,8 +105,12 @@ body {
      font-weight: bold;
 }
 
-i {
-     /*position: fixed;*/
+.create {
+     text-align: center;
+     font-weight: bold;
+     font-size: 30px;
+     margin-top: 50px;
+     margin-bottom: 40px;
 }
 
 .scroll {
@@ -107,8 +118,62 @@ i {
      width: 20px;
 }
 
+
 /*  Snow animation credit goes to the awesome person below!!! */
 /* https://codepen.io/sashatran/pen/mOWLLB */
+
+
+/* side navbar */
+
+/* header,
+main,
+footer {
+     padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+     header,
+     main,
+     footer {
+          padding-left: 0;
+     }
+} */
+/* starts sidebar */
+.mynav {
+     margin: 0;
+     max-width: 1280px;
+     width: 90%;
+}
+.mfooter {
+     z-index: auto;
+}
+#recipientname {
+     border: none;
+     border-style: ridge;
+     width: 70%;
+}
+/* .createlist2 {
+     border: none;
+     border-style: ridge;
+     width: 70%;
+} */
+.rlist {
+     margin-left: 20%;
+     margin-right: auto;
+     margin-bottom: 20px;
+
+     border-style: ridge;
+     /* width: 70%; */
+     width: 40%;
+}
+.createlist {
+     border: none;
+     border-style: ridge;
+     width: 70%;
+}
+/*  Snow animation and christmas countdown credit goes to the awesome person below!!! */
+/* _______________________________https://codepen.io/sashatran/pen/mOWLLB  ______________________________________ */
+
 
 @import url('https://fonts.googleapis.com/css?family=Cookie');
 
@@ -410,3 +475,4 @@ i {
  
 
 /* ______________________________________________________________________________ */
+

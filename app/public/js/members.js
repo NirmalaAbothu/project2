@@ -14,86 +14,6 @@ $(document).ready(function () {
      $("#sidenav-1").sidenav({ edge: "left" });
 
 
-<<<<<<< HEAD
-     $.get("/api/allRecipients").then(data => {
-          console.log(data);
-          data.forEach(element => {
-               // console.log(element.id)
-               let li = $("<li>");
-               li.addClass("name");
-               li.attr("data-id", element.id);
-               li.text(element.name);
-               console.log(li);
-
-               recipientsListEl.append(li);
-          });
-     });
-
-     $()
-
-     $("ul").on("click", ".name", function(event) {
-          console.log(event.target)
-          const recipientData = {
-               id: $(this).data("id"),
-               name: $(this).text()
-          }
-
-          displayGiftList(recipientData)
-          console.log(recipient)
-          console.log(recipientName)
-          
-     })
-
-
-
-
-     // {
-     //      console.log(data)
-     //      // }).then((res) => {
-     //      //      var result = res;
-
-     //      // displayRecipientsList(data);
-     //      // for (let i = 0; i < data.Length; i++) {
-     //      //      console.log();
-     //      //      console.log();
-     //      //      let li = $("<li>");
-     //      //      li.addClass("name");
-     //      //      li.attr("data-id", data[i].id);
-     //      //      li.text(data[i].name);
-     //      //      console.log(li);
-
-     //      //      recipientsListEl.append(li);
-     //      // }
-     // }).then(response => {
-     //      for (let i = 0; i < response.Length; i++) {
-     //           console.log();
-     //           console.log();
-     //           let li = $("<li>");
-     //           li.addClass("name");
-     //           li.attr("data-id", response[i].id);
-     //           li.text(response[i].name);
-     //           console.log(li);
-
-     //           recipientsListEl.append(li);
-     //      }
-     // })
-
-     //f
-
-
-     //function displayRecipientsList
-
-     function displayRecipientsList(result) {
-          for (let i = 0; i < result.Length; i++) {
-               let li = $("<li>");
-               li.addClass("name");
-               li.attr("data-id", result[i].id_recipient);
-               li.text(result[i].name);
-
-               listEL.append(li);
-          }
-     }
-=======
      // On page load display all the recipients for the current user.
      displayRecipientsList()
 
@@ -104,23 +24,12 @@ $(document).ready(function () {
      function displayRecipientsList() {
           // Emptying out the current list
           recipientsListEl.empty()
->>>>>>> e050930dc8f3d3a8e2710b2ae56d0d81ab95db1f
 
           // Making ajax call expects an array of the recipients for the current logged in user. 
           $.get("/api/allRecipients").then(data => {
 
-<<<<<<< HEAD
-     function displayGiftList(data) {
-          const {id, name} = data
-          $("#recipName").text(name)
-          // const id = $(this).data - id;
-          $.get("/api/allRecipients/" + id).then(function (response) {
-               var gifts = response;
-               for (let i = 0; i < gifts.Length; i++) {
-=======
                // For each element in the response...
                data.forEach(element => {
->>>>>>> e050930dc8f3d3a8e2710b2ae56d0d81ab95db1f
 
                     // Create an li and set its name and data-id attr
                     let li = $("<li>");
@@ -137,50 +46,6 @@ $(document).ready(function () {
      }
 
      // function to display Gifts
-<<<<<<< HEAD
-     // function displayGiftList() {
-     //                const id = $(this).data("id");
-     //                $.get("/api/allRecipients/" + id).then(function (response) {
-     //                     var gifts = response;
-     //                     for (let i = 0; i < gifts.Length; i++) {
-     //                          let li = $("<li>");
-     //                          li.attr("data-id", result[i].id);
-     //                          li.text(result[i].gift);
-     //                          let icon = $("<icon>").addClass("small material-icons removeGift").text("check");
-     //                          li.append(icon)
-     //                          // <i class="material-icons">add</i>
-     //                          divEL.append(li);
-     //                     }
-     //                });
-     //           }
-
-     //when user click on one of the recipient names in list ,displayGiftList function will be called
-     $(".name").on("click", function(){
-          displayGiftList();
-
-          $(function () {
-               // adding new recipient
-
-               $("#newrecipient").on("submit", function (event) {
-                    // Make sure to preventDefault on a submit event.
-                    event.preventDefault();
-                    var result = $("#recipientname").val().trim();
-                    console.log(result);
-
-                    var newRecipient = {
-                         name: $("#recipientname").val().trim(),
-                    };
-
-                    // Send the POST request.
-                    $.ajax("/api/recipients", {
-                         type: "POST",
-                         data: newRecipient,
-                    }).then(function () {
-                         console.log("Added new recipient");
-                         // Reload the page to get the updated list
-                         location.reload();
-                    });
-=======
      function displayGiftList(recipient_id) {
           // Empty out the current gift list
           listEL.empty();
@@ -204,7 +69,6 @@ $(document).ready(function () {
                     button.append(icon)
                     li.append(button)
                     listEL.append(li);
->>>>>>> e050930dc8f3d3a8e2710b2ae56d0d81ab95db1f
                });
           });
      }

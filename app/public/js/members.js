@@ -2,9 +2,7 @@
 
 // reference variable
 
-
 $(document).ready(function () {
-
      // let listEL = $(".collection");
      let divEL = $(".giftlist");
      const recipientsListEl = $("#recipientsList");
@@ -12,10 +10,9 @@ $(document).ready(function () {
      $(".sidenav").sidenav();
      $("#sidenav-1").sidenav({ edge: "left" });
 
-
-     $.get("/api/allRecipients").then(data => {
+     $.get("/api/allRecipients").then((data) => {
           console.log(data);
-          data.forEach(element => {
+          data.forEach((element) => {
                // console.log(element.id)
                let li = $("<li>");
                li.addClass("name");
@@ -25,71 +22,25 @@ $(document).ready(function () {
 
                recipientsListEl.append(li);
           });
-     })
-     // {
-     //      console.log(data)
-     //      // }).then((res) => {
-     //      //      var result = res;
-          
-     //      // displayRecipientsList(data);
-     //      // for (let i = 0; i < data.Length; i++) {
-     //      //      console.log();
-     //      //      console.log();
-     //      //      let li = $("<li>");
-     //      //      li.addClass("name");
-     //      //      li.attr("data-id", data[i].id);
-     //      //      li.text(data[i].name);
-     //      //      console.log(li);
+     });
 
-     //      //      recipientsListEl.append(li);
-     //      // }
-     // }).then(response => {
-     //      for (let i = 0; i < response.Length; i++) {
-     //           console.log();
-     //           console.log();
-     //           let li = $("<li>");
-     //           li.addClass("name");
-     //           li.attr("data-id", response[i].id);
-     //           li.text(response[i].name);
-     //           console.log(li);
+     // function to display Gifts
 
-     //           recipientsListEl.append(li);
+     // function displayGiftList() {
+     //      const id = $(this).data - id;
+     //      $.get("/api/allRecipients/" + id).then(function (response) {
+     //           var gifts = response;
+     //           for (let i = 0; i < gifts.Length; i++) {
+
+     //                let li = $("<li>");
+     //                li.addClass("name");
+     //                li.attr("data-id", result[i].id);
+     //                li.text(result[i].name);
+     //                console.log(li);
+
+     //                recipientsListEl.append(li);
+     //           }
      //      }
-     // })
-
-     //f
-
-
-//function displayRecipientsList
-
-function displayRecipientsList(result) {
-     for (let i = 0; i < result.Length; i++) {
-          let li = $("<li>");
-          li.addClass("name");
-          li.attr("data-id", result[i].id_recipient);
-          li.text(result[i].name);
-
-          listEL.append(li);
-     }
-}
-
-// function to display Gifts
-
-function displayGiftList() {
-     const id = $(this).data - id;
-     $.get("/api/allRecipients/" + id).then(function (response) {
-          var gifts = response;
-          for (let i = 0; i < gifts.Length; i++) {
-
-               let li = $("<li>");
-               li.addClass("name");
-               li.attr("data-id", result[i].id);
-               li.text(result[i].name);
-               console.log(li);
-
-               recipientsListEl.append(li);
-          }
-     }
 
      // function
 
@@ -102,8 +53,10 @@ function displayGiftList() {
                     let li = $("<li>");
                     li.attr("data-id", result[i].id);
                     li.text(result[i].gift);
-                    let icon = $("<icon>").addClass("small material-icons removeGift").text("check");
-                    li.append(icon)
+                    let icon = $("<icon>")
+                         .addClass("small material-icons removeGift")
+                         .text("check");
+                    li.append(icon);
                     // <i class="material-icons">add</i>
                     divEL.append(li);
                }

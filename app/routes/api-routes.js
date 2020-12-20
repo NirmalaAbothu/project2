@@ -5,14 +5,12 @@ module.exports = app => {
 
     app.post('/api/login', passport.authenticate("local"), (req, res) => {
         res.json(req.user);
-        // console.log(req.user);
+        
     })
 
     app.post('/api/signUp', (req, res) => {
         db.User.create(req.body).then(response => {
-            // response = JSON.parse(response)
-            // console.log(response.User.dataValues.id)
-            // res.send(response);
+
         }).then(function () {
             res.redirect(307, "/api/login");
         })
@@ -26,15 +24,18 @@ module.exports = app => {
         res.redirect("/");
     });
 
-    app.post('/api/newRecipient', (req, res) => {
-        db.Recipients.create(req.body).then(response => {
-            console.log(req.body)
+    app.post('/api/newRecipient/:name', (req, res) => {
+        db.Recipients.create(
+            {
+                name: req.params.name,
+                id_user: req.user.id,
+            }
+        ).then(response => {
             res.send(response)
         })
     })
 
     app.get('/api/allRecipients', (req, res) => {
-        console.log(`This is the users id ${req.user.id}`);
         db.Recipients.findAll({
             where: {
                 id_user: req.user.id,
@@ -49,8 +50,7 @@ module.exports = app => {
 
     app.post('/api/newGift', (req, res) => {
         db.Gifts.create(req.body).then(response => {
-            console.log(req.body);
-            res.send(response);
+            res.json(response);
         })
     });
 
@@ -61,7 +61,6 @@ module.exports = app => {
                 id_recipient: req.params.id_recipient
             }
         }).then(function (response) {
-            console.log(response)
             res.json(response);
         });
     });

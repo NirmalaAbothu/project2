@@ -6,7 +6,7 @@
             <ul class="right hide-on-med-and-down">
 
                 <li class="active"><a href="#">Members</a></li>
-                
+
                 <li><a href="/logout">Logout</a></li>
 
             </ul>
@@ -18,33 +18,33 @@
 <!-- LEFT SIDEBAR	 -->
 <div id="sidenav-1" class="sidenav sidenav-fixed" style="z-index: auto; top: auto; width: fit-content">
     <div>
-      <div>
-        <a class="subheader">
-            <h4>Recipients</h4>
-        </a>
-      </div>
-    <div>
-        <form id="createrecipient" style="text-align: center">
-            <!-- <div class="card">
+        <div>
+            <a class="subheader">
+                <h4>Recipients</h4>
+            </a>
+        </div>
+        <div>
+            <form id="createrecipient" style="text-align: center">
+                <!-- <div class="card">
                               <div class="card-content"> -->
-            <section class="form-field">
-                <i class="small material-icons prefix">person
-                    <input type="text" id="recipientname" placeholder="Add New Recipient" />
-                </i>
-            </section>
-            <button type="submit" id="newrecipient">Add</button>
-        </form>
+                <section class="form-field">
+                    <i class="small material-icons prefix">person
+                        <input type="text" id="recipientname" placeholder="Add New Recipient" />
+                    </i>
+                </section>
+                <button type="submit" id="newrecipient">Add</button>
+            </form>
+        </div>
+        <ul id="recipientsList"></ul>
     </div>
-    <ul id="recipientsList"></ul>
-    </div>
-    
+
 </div>
 
 <!-- main content -->
 <main>
     <h3 class="center">
-        Gift List for 
-        <span id='recipName'> </span></h3>
+        Gift List for
+        <span id='recipName' data-recipient=""> </span></h3>
 
 
     <div class="container">
@@ -78,8 +78,8 @@
 
         {{!-- Snow globe animation and christmas countdown credit goes to the awesome person below!!! */
         /* https://codepen.io/cooper5/pen/PoGGXGR --}}
-        <div >
-            <div class="o">
+        <div>
+            <div class="o" style="bottom: 80px;">
                 <div class="snowing">
                     <div class="snows">
                     </div>
@@ -123,11 +123,11 @@
                     </div>
                 </div>
             </div>
-            <div class="base">
+            <div class="base" style="bottom: 80px;">
                 <h5 class='countdown' id="countdown">
                 </h5>
             </div>
-            <div class="shadow">
+            <div class="shadow" style="bottom: 65px;">
             </div>
         </div>
         {{!-- _____________ --}}

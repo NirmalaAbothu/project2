@@ -18,6 +18,15 @@ $(document).ready(function () {
      displayRecipientsList()
 
 
+<<<<<<< HEAD
+          $("#recipName").text(currentRecipient_name);
+          $("#recipName").data("recipient", currentRecipients_id);
+          displayGiftList(currentRecipients_id);
+          
+
+     });
+=======
+>>>>>>> develop
 
      //______________________________________REUSABLE FUNCTIONS_________________________________________________
      // Function for displaying all the recipients.
@@ -36,9 +45,15 @@ $(document).ready(function () {
                     li.addClass("name");
                     li.attr("data-id", element.id);
                     li.text(element.name);
+          
+                    let button = $("<button>");
+                    button.addClass("close-button");
+                    button.attr("data-id", element.id);
+                    button.text("x");
 
                     // Append the new li to the recipients list
                     recipientsListEl.append(li);
+                    li.append(button);
                });
           });
 
@@ -69,6 +84,7 @@ $(document).ready(function () {
                     button.append(icon)
                     li.append(button)
                     listEL.append(li);
+
                });
           });
      }
@@ -139,6 +155,29 @@ $(document).ready(function () {
                $("#recipientname").val("");
           });
      });
+<<<<<<< HEAD
+
+     // Event listener and AJAX call to delete recipient.
+
+     $(".close-button").on("click", function(event) {
+          event.preventDefault();
+
+          
+          const id = $(this).data("id");
+          console.log(id);
+
+          $.ajax("/api/deleteRecipient/" + id, {
+               type: "DELETE",
+           }).then(
+               function() {
+                   console.log("Deleted recipient with ID" + id);
+                   location.reload();
+               }
+           );
+     });
+});
+=======
      //__________________________________________________________________________________________________________________________
 
 });
+>>>>>>> develop

@@ -78,7 +78,7 @@ module.exports = app => {
     });
 
     // Route for deleting a recipient based on their id.
-    app.get('/api/deleteRecipient/:id_recipient', (req, res) => {
+    app.delete('/api/deleteRecipient/:id_recipient', (req, res) => {
         // Search and destroy...
         db.Recipients.destroy({
             where: {
@@ -90,7 +90,7 @@ module.exports = app => {
     });
 
     // Route for deleting a gift based on the gift id.
-    app.get('/api/deleteGift/:id_gift', (req, res) => {
+    app.delete('/api/deleteGift/:id_gift', (req, res) => {
         // Search and destroy...
         db.Recipients.destroy({
             where: {

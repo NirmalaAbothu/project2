@@ -80,6 +80,8 @@ module.exports = app => {
     // Route for deleting a recipient based on their id.
     app.delete('/api/deleteRecipient/:id_recipient', (req, res) => {
         // Search and destroy...
+        console.log(req.params);
+
         db.Recipients.destroy({
             where: {
                 id: req.params.id_recipient

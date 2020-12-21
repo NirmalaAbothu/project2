@@ -78,8 +78,10 @@ module.exports = app => {
     });
 
     // Route for deleting a recipient based on their id.
-    app.get('/api/deleteRecipient/:id_recipient', (req, res) => {
+    app.delete('/api/deleteRecipient/:id_recipient', (req, res) => {
         // Search and destroy...
+        console.log(req.params);
+
         db.Recipients.destroy({
             where: {
                 id: req.params.id_recipient

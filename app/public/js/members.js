@@ -18,15 +18,6 @@ $(document).ready(function () {
      displayRecipientsList()
 
 
-<<<<<<< HEAD
-          $("#recipName").text(currentRecipient_name);
-          $("#recipName").data("recipient", currentRecipients_id);
-          displayGiftList(currentRecipients_id);
-          
-
-     });
-=======
->>>>>>> develop
 
      //______________________________________REUSABLE FUNCTIONS_________________________________________________
      // Function for displaying all the recipients.
@@ -42,10 +33,16 @@ $(document).ready(function () {
 
                     // Create an li and set its name and data-id attr
                     let li = $("<li>");
-                    li.addClass("name");
-                    li.attr("data-id", element.id);
-                    li.text(element.name);
-          
+                    li.addClass("recip-style");
+                    // li.addClass("name");
+                    // li.attr("data-id", element.id);
+                    // li.text(element.name);
+
+                    let span = $("<span>");
+                    span.addClass("name");
+                    span.attr("data-id", element.id);
+                    span.text(element.name);
+                    
                     let button = $("<button>");
                     button.addClass("close-button");
                     button.attr("data-id", element.id);
@@ -53,6 +50,7 @@ $(document).ready(function () {
 
                     // Append the new li to the recipients list
                     recipientsListEl.append(li);
+                    li.append(span);
                     li.append(button);
                });
           });
@@ -96,6 +94,7 @@ $(document).ready(function () {
      //____________________________________ON CLICK FUNCTIONS__________________________________________________________________
      // In the side nave if a li with the class .name is clicked...
      $("ul").on("click", ".name", function (event) {
+     // $("span").on("click", ".name", function (event) {
 
           // Capture this elements data-id and text field.
           const currentRecipients_id = $(this).data("id")
@@ -155,11 +154,10 @@ $(document).ready(function () {
                $("#recipientname").val("");
           });
      });
-<<<<<<< HEAD
 
      // Event listener and AJAX call to delete recipient.
 
-     $(".close-button").on("click", function(event) {
+     $("ul").on("click", "button", function(event) {
           event.preventDefault();
 
           
@@ -176,8 +174,3 @@ $(document).ready(function () {
            );
      });
 });
-=======
-     //__________________________________________________________________________________________________________________________
-
-});
->>>>>>> develop

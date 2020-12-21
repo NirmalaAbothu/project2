@@ -19,6 +19,8 @@ $(document).ready(function () {
           $("#recipName").text(currentRecipient_name);
           $("#recipName").data("recipient", currentRecipients_id);
           displayGiftList(currentRecipients_id);
+          
+
      });
 
      function displayRecipientsList() {
@@ -30,8 +32,14 @@ $(document).ready(function () {
                     li.addClass("name");
                     li.attr("data-id", element.id);
                     li.text(element.name);
+          
+                    let button = $("<button>");
+                    button.addClass("close-button");
+                    button.attr("data-id", element.id);
+                    button.text("x");
 
                     recipientsListEl.append(li);
+                    li.append(button);
                });
           });
      }
@@ -55,6 +63,7 @@ $(document).ready(function () {
                     li.append(button);
 
                     listEL.append(li);
+
                });
           });
      }
@@ -91,5 +100,24 @@ $(document).ready(function () {
                displayRecipientsList();
                $("#recipientname").val("");
           });
+     });
+
+     // Event listener and AJAX call to delete recipient.
+
+     $(".close-button").on("click", function(event) {
+          event.preventDefault();
+
+          
+          const id = $(this).data("id");
+          console.log(id);
+
+          $.ajax("/api/deleteRecipient/" + id, {
+               type: "DELETE",
+           }).then(
+               function() {
+                   console.log("Deleted recipient with ID" + id);
+                   location.reload();
+               }
+           );
      });
 });

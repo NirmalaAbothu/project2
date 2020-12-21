@@ -98,6 +98,10 @@ body {
 
 
 /* START MEMBERS PAGE */
+.subheader {
+     text-align: center;
+}
+
 .sidenav {
      background-color: #bbd7f5;
 }

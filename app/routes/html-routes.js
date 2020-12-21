@@ -23,7 +23,7 @@ module.exports = app => {
             res.redirect("/members")
         }
 
-        res.render("login")
+        res.render("members")
 
     })
     app.get("/login", function (req, res) {

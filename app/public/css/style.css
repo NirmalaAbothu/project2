@@ -22,6 +22,7 @@ footer {
 
 .copyright {
      text-align: left;
+     font-size: large;
 }
 
 body {
@@ -30,7 +31,7 @@ body {
      width: 100%;
      font-family: 'Cookie', cursive;
      overflow: hidden;
-     position:fixed;
+     position: fixed;
 }
 
 .card {
@@ -127,15 +128,46 @@ body {
      border: none;
 }
 
-.recip-style:hover{
-     background-color: #324b77;
-     }
-     
-.recip-style:active{
-background-color: #bbd7f5;
+.recip-style {
+     font-size: 40px;
+     text-align: center;
 }
 
+.gift {
+     font-size: 30px;
+}
 
+.deleteGift {
+     background-color: #bbd7f5;
+     color: #324b77;
+     line-height: 0.6rem !important;
+     float: left;
+     border: none;
+     margin-right: 30px;
+}
+
+.close-button {
+     background: none;
+     color: #bbd7f5;
+     line-height: 0.6rem !important;
+     float: right;
+     margin-right: 5px;
+     border: none;
+}
+
+.close-button:hover {
+     transform: scale(1.3); 
+     }
+
+.recip-style:hover {
+     background-color: #324b77;
+
+}
+
+.recip-style:active {
+     background-color: #bbd7f5;
+
+}
 
 /* END MEMBERS PAGE */
 
@@ -238,7 +270,6 @@ background-color: #bbd7f5;
      right: unset;
      left: unset;
      bottom: -5px;
-
 }
 
 .globeMan {
@@ -465,6 +496,12 @@ background-color: #bbd7f5;
      font-size: 15px;
      text-align: center;
      font-weight: bold;
+}
+
+@media only screen and (max-width: 992px) {
+	.globeMan {
+		display: none;
+	}
 }
 
 /* ______________________________________________________________________________ */

@@ -168,7 +168,7 @@ $(document).ready(function () {
                type: "DELETE",
           }).then(function () {
                console.log("Deleted recipient with ID" + id);
-               location.reload();
+               displayRecipientsList();
           });
      });
 });

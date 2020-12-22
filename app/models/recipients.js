@@ -19,13 +19,13 @@ module.exports = (sequelize, DataTypes) => {
 
     Recipients.associate = (models) => {
         Recipients.belongsTo(models.User, {
+            onDelete: "cascade",
             foreignKey: "id_user" 
         })
     };
 
     Recipients.associate = (models) => {
         Recipients.hasMany(models.Gifts, {
-          onDelete: "cascade",
           foreignKey: "id_recipient"
         });
       };

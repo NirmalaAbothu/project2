@@ -2,6 +2,8 @@ const exphbs = require("express-handlebars");
 const db = require("../models/index");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
+
+
 module.exports = (app) => {
      // On Page load...
      app.get("/", (req, res) => {
@@ -38,3 +40,4 @@ module.exports = (app) => {
           res.render("members");
      });
 };
+

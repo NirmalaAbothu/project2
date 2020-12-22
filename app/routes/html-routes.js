@@ -11,7 +11,7 @@ module.exports = app => {
             res.redirect("/members")
         }
         // Or render out the login page
-        res.render("register")
+        res.render("login")
     })
 
     // On login route..

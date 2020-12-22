@@ -5,106 +5,104 @@
 </nav>
 
 <main class="container">
-               <div class="special">
-                    <p id="days"> </p>
-                    <form id="Login">
-                         <div class="card">
-                              <div class="card-action lighten-1 white-text" id='colorChange'>
-                                   <h3 style="text-align: center">
-                                        Login Form
-                                   </h3>
-                              </div>
-                              <br>
-                              <div class="card-content">
-                                   <section class="form-field moveRight">
-                                        <i class="small material-icons prefix">person
-                                             <input type="text" id="username" placeholder="Enter Your Email" />
-                                        </i>
-                                   </section>
-                                   <br />
-                                   <section class="form-field moveRight">
-                                        <i class="small material-icons prefix">lock
-                                             <input type="password" id="password" placeholder="Enter Your Password" />
-                                        </i>
-                                   </section>
-                                   <br />
+     <div class="special">
+          <p id="days"> </p>
+          <form id="Login">
+               <div class="card">
+                    <div class="card-action lighten-1 white-text" id='colorChange'>
+                         <h3 style="text-align: center">
+                              Login Form
+                         </h3>
+                    </div>
+                    <br>
+                    <div class="card-content">
+                         <section class="form-field moveRight">
+                              <i class="small material-icons prefix">person
+                                   <input type="text" id="username" placeholder="Enter Your Email" />
+                              </i>
+                         </section>
+                         <br />
+                         <section class="form-field moveRight">
+                              <i class="small material-icons prefix">lock
+                                   <input type="password" id="password" placeholder="Enter Your Password" />
+                              </i>
+                         </section>
+                         <br />
 
-                                   <section class="form-field moveRight">
-                                        <label>
-                                             <input type="checkbox" />
-                                             <span>Remember me</span> </label><br />
-                                   </section>
-                                   <br>
-                                   <section class="form-field ">
-                                        <button class="btn-large waves-effect waves-light" style="width: 100%"
-                                             id="login-btn">
-                                             Login
-                                        </button>
-                                   </section>
+                         <section class="form-field moveRight">
+                              <label>
+                                   <input type="checkbox" />
+                                   <span>Remember me</span> </label><br />
+                         </section>
+                         <br>
+                         <section class="form-field ">
+                              <button class="btn-large waves-effect waves-light" style="width: 100%" id="login-btn">
+                                   Login
+                              </button>
+                         </section>
+                    </div>
+               </div>
+          </form>
+          <section class="newuser">
+               Not a user? Create a profile
+               <a href="/register">here</a>
+          </section>
+     </div>
+
+     {{!-- Snow globe animation and christmas countdown credit goes to the awesome person below!!! */
+     /* https://codepen.io/cooper5/pen/PoGGXGR --}}
+     <div class='globeMan'>
+          <div class="o">
+               <div class="snowing">
+                    <div class="snows">
+                    </div>
+                    <div class="collect">
+                         <div class="hat">
+                              <div class="hat2">
+                                   <div class="ribbon">
+                                   </div>
                               </div>
                          </div>
-                    </form>
-               <section class="newuser">
-                    Not a user? Create a profile
-                    <a href="/register">here</a>
-               </section>
+                         <div class="snowman">
+                              <div class="snowman2">
+                                   <div class="button1">
+                                        <div class="button2">
+                                        </div>
+                                        <div class="button3">
+                                        </div>
+                                   </div>
+                                   <div class="hand">
+                                        <div class="hand2">
+                                        </div>
+                                   </div>
+                                   <div class="hand3">
+                                   </div>
+                                   <div class="snowman3">
+                                        <div class="eye">
+                                             <div class="carrot">
+                                             </div>
+                                        </div>
+                                        <div class="eye2">
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="snow">
+                         <div class="snow2">
+                         </div>
+                         <div class="snow3">
+                         </div>
+                    </div>
                </div>
+          <div class="base">
+               <h5 class='countdown' id="countdown">
+               </h5>
+          </div>
+          </div>
 
-{{!-- Snow globe animation and christmas countdown credit goes to the awesome person below!!! */
-/* https://codepen.io/cooper5/pen/PoGGXGR --}}
-<div>
-     <div class="o">
-   <div class="snowing">
-      <div class="snows">
-      </div>
-      <div class="collect">
-         <div class="hat">
-            <div class="hat2">
-               <div class="ribbon">
-               </div>
-            </div>
-         </div>
-         <div class="snowman">
-            <div class="snowman2">
-               <div class="button1">
-                  <div class="button2">
-                  </div>
-                  <div class="button3">
-                  </div>
-               </div>
-               <div class="hand">
-                  <div class="hand2">
-                  </div>
-               </div>
-               <div class="hand3">
-               </div>
-               <div class="snowman3">
-                  <div class="eye">
-                     <div class="carrot">
-                     </div>
-                  </div>
-                  <div class="eye2">
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="snow">
-         <div class="snow2">
-         </div>
-         <div class="snow3">
-         </div>
-      </div>
-   </div>
-</div>
-<div class="base">
-   <h5 class='countdown' id="countdown">
-   </h5>
-</div>
-<div class="shadow">
-</div>
-</div>
-{{!-- _____________ --}}
+     </div>
+     {{!-- _____________ --}}
 </main>
 
 <div class="footer-fixed">

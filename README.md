@@ -25,15 +25,15 @@ As the holiday season rolls around, it can be a daunting task to keep track of a
 
 **Login Page**
 
-![Login Page Snapshot](./public/assets/login.png)
+![Login Page Snapshot](./app/public/assets/login.png)
 
 **Signup Page**
 
-![Signup Page Snapshot](./public/assets/signup.png)
+![Signup Page Snapshot](./app/public/assets/signup.png)
 
 **Members Page**
 
-![Members Page Snapshot](./public/assets/members.png)
+![Members Page Snapshot](./app/public/assets/members.png)
 
 <hr>
 
@@ -91,7 +91,7 @@ This application can be used throughout the year to keep track of gift recipient
 
 Watch the short video below to see how the program works.
 
-![Naughty-or-Nice-Demo](./public/assets/demo.gif)
+![Naughty-or-Nice-Demo](./app/public/assets/demo.gif)
 
 ## Future Development
 Below is a list of additional features and content the development team would like to add to this project moving forward:

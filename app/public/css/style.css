@@ -143,6 +143,7 @@ body {
      line-height: 0.6rem !important;
      float: left;
      border: none;
+     margin-right: 30px;
 }
 
 .close-button {

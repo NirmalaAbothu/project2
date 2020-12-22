@@ -4,7 +4,7 @@
 
 Explore the [Project Page](https://github.com/NirmalaAbothu/Naughty_or_Nice)
 
-View it live on [Heroku]()
+View it live on [Heroku](https://evening-springs-93825.herokuapp.com/)
 
 ## Table of Contents
 - [About The Project](#about-the-project)
@@ -42,6 +42,7 @@ As the holiday season rolls around, it can be a daunting task to keep track of a
 This project was built using:
 
 * JavaScript
+* [Materialize](https://materialize.com/docs/)
 * [jQuery](https://jquery.com/)
 * [Node.js](https://nodejs.org/api/fs.html)
 * [MySQL2](https://www.npmjs.com/package/mysql2)
@@ -115,4 +116,4 @@ This project is licensed under the permissive open source MIT license.
 
 Project Link: [https://github.com/NirmalaAbothu/Naughty_or_Nice](https://github.com/NirmalaAbothu/Naughty_or_Nice)
 
-Live Link:[]()
+Live Link:[https://evening-springs-93825.herokuapp.com/](https://evening-springs-93825.herokuapp.com/)

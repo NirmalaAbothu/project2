@@ -1,102 +1,174 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-// test
-// reference variable
-let listEL = $(".collection");
-let divEL = $(".giftlist");
 
-// for (var i = 0; i < cityList.length; i++) {
-//      var button = $("<button>");
-//      button.addClass("city");
-//      button.attr("data-name", cityList[i]);
-//      button.text(cityList[i]);
-//      // console.log("city added");
-//      listEL.append(button);
-// }
-// test
+// reference variable
+
 $(document).ready(function () {
+     // Setting vars.
+     let listEL = $(".collection");
+     let divEL = $(".giftlist");
+     const recipientsListEl = $("#recipientsList");
+
+     // Setting up nav bar.
      $(".sidenav").sidenav();
      $("#sidenav-1").sidenav({ edge: "left" });
 
-     $.get("/api/allRecipients").then((res) => {
-          var result = res;
-          displayGiftList(result);
-     });
-});
-//function
-function displayRecipientsList(result) {
-     for (let i = 0; i < result.Length; i++) {
-          let li = $("<li>");
-          li.addClass("name");
-          li.attr("data-id", result[i].id_recipient);
-          li.text(result[i].name);
+     // On page load display all the recipients for the current user.
+     displayRecipientsList();
 
-          listEL.append(li);
+     //______________________________________REUSABLE FUNCTIONS_________________________________________________
+     // Function for displaying all the recipients.
+     function displayRecipientsList() {
+          // Emptying out the current list
+          recipientsListEl.empty();
+
+          // Making ajax call expects an array of the recipients for the current logged in user.
+          $.get("/api/allRecipients").then((data) => {
+               // For each element in the response...
+               data.forEach((element) => {
+                    // Create an li and set its name and data-id attr
+                    let li = $("<li>");
+                    li.addClass("recip-style");
+                    // li.addClass("name");
+                    // li.attr("data-id", element.id);
+                    // li.text(element.name);
+
+                    let span = $("<span>");
+                    span.addClass("name");
+                    span.attr("data-id", element.id);
+                    span.text(element.name);
+
+                    let button = $("<button>");
+                    button.addClass("close-button");
+                    button.attr("data-id", element.id);
+                    button.text("x");
+
+                    // Append the new li to the recipients list
+                    recipientsListEl.append(li);
+                    li.append(span);
+                    li.append(button);
+               });
+          });
      }
-}
 
-// function
+     // function to display Gifts
+     function displayGiftList(recipient_id) {
+          // Empty out the current gift list
+          listEL.empty();
+          // making sure the id is a int
+          const id = parseInt(recipient_id);
+          // Making an ajax call for all the gifts for a given recipient expects an array of gifts.
+          $.get("/api/allGifts/" + id).then(function (response) {
+               // For each of the gifts...
+               response.forEach((element) => {
+                    // create an li with gift name data-id and a button to delete them.
+                    let li = $("<li>");
+                    li.addClass("gift");
+                    li.attr("data-id", element.id);
+                    li.text(element.gift);
+                    let button = $("<button>").addClass("deleteGift");
+                    let icon = $("<icon>")
+                         .addClass("small material-icons removeGift")
+                         .text("check");
 
-// function to display Gifts
-function displayGiftList() {
-     const id = $(this).data - id;
-     $.get("/api/allRecipients/" + id).then(function (response) {
-          var gifts = response;
-          for (let i = 0; i < gifts.Length; i++) {
-               let li = $("<li>");
+                    // Adding icon to the button then the button the li and finally li to the list
+                    button.append(icon);
+                    li.append(button);
+                    listEL.append(li);
 
-               li.text(result[i].gift);
-               divEL.append(li);
-          }
+                    // adding click event for delete gift item from the list
+                    $(".collection .deleteGift").on("click", function () {
+                         elementId = $(this).parent().data("id");
+                         console.log(elementId);
+                         var result = $(this).parent();
+                         console.log(result);
+                         $.ajax({
+                              method: "DELETE",
+                              url: "/api/deleteGift/" + elementId,
+                         }).then(function () {});
+                         console.log(result);
+                         $(this).parent().remove();
+                    });
+               });
+          });
+     }
+     // ___________________________________________________________________________________________________________________
+
+     //____________________________________ON CLICK FUNCTIONS__________________________________________________________________
+     // In the side nave if a li with the class .name is clicked...
+     $("ul").on("click", ".name", function (event) {
+          // $("span").on("click", ".name", function (event) {
+
+          // Capture this elements data-id and text field.
+          const currentRecipients_id = $(this).data("id");
+          const currentRecipient_name = $(this).text();
+
+          // Using stored values for the recipients data to update the
+          // which recipients gifts will be displayed or modified.
+          $("#recipName").text(currentRecipient_name);
+          $("#recipName").data("recipient", currentRecipients_id);
+
+          // After the current recipients data is set display all their gifts.
+          displayGiftList(currentRecipients_id);
      });
-}
 
-//when user click on one of the recipient names in list ,displayGiftList function will be called
-$(document).on("click", ".name", displayGiftList);
-
-$(function () {
-     // adding new recipient
-
-     $("#newrecipient").on("submit", function (event) {
-          // Make sure to preventDefault on a submit event.
+     // When the button to add a new list item is clicked...
+     $("#addlist").on("click", function (event) {
+          // Prevent the default action
           event.preventDefault();
-          var result = $("#recipientname").val().trim();
-          console.log(result);
 
-          var newRecipient = {
-               name: $("#recipientname").val().trim(),
+          // Storing the currents recipients name and id
+          const currentRecipient = $("#recipName");
+          const recipient_id = currentRecipient.data("recipient");
+
+          // Constructing an obj to send to the db with the value of the input for the gift and recipients id.
+          const newGift = {
+               gift: $("#listitem1").val().trim(),
+               id_recipient: parseInt(recipient_id),
           };
 
-          // Send the POST request.
-          $.ajax("/api/recipients", {
+          // Making and ajax call to create the new gift.
+          $.ajax({
                type: "POST",
-               data: newRecipient,
-          }).then(function () {
-               console.log("Added new recipient");
-               // Reload the page to get the updated list
-               location.reload();
+               url: "/api/newGift",
+               data: newGift,
+          }).then((res) => {
+               // After the call is completed display the gifts for the user with the updated gift
+               displayGiftList(recipient_id);
+               // then clear the input.
+               $("#listitem1").val("");
           });
      });
 
-     //adding new list to the recipient
-
-     $("#addlist").on("submit", function (event) {
+     // When new recipients btn is clicked...
+     $("#newrecipient").on("click", function (event) {
           // Make sure to preventDefault on a submit event.
           event.preventDefault();
-          var result = $("#listitem1").val().trim();
-          console.log(result);
 
-          var newGift = {
-               gift: $("#listitem1").val().trim(),
-          };
+          // Store value of the input fiend
+          var newRecipient = $("#recipientname").val().trim();
 
-          // Send the POST request.
-          $.ajax("/api/gifts", {
-               type: "POST",
-               data: newGift,
+          // Send the POST request to create the new recipient
+          $.post("/api/newRecipient/" + newRecipient, function () {
+               // Call the display recipients function to get updated recipient.
+               displayRecipientsList();
+               // clear out the input field.
+               $("#recipientname").val("");
+          });
+     });
+
+     // Event listener and AJAX call to delete recipient.
+
+     $("ul").on("click", "button", function (event) {
+          event.preventDefault();
+
+          const id = $(this).data("id");
+          console.log(id);
+
+          $.ajax("/api/deleteRecipient/" + id, {
+               type: "DELETE",
           }).then(function () {
-               console.log("Added new gift");
-               // Reload the page to get the updated list
-               location.reload();
+               console.log("Deleted recipient with ID" + id);
+               displayRecipientsList();
           });
      });
 });

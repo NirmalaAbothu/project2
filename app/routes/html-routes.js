@@ -1,78 +1,41 @@
-
-const exphbs = require('express-handlebars');
-const db = require('../models/index');
-
+const exphbs = require("express-handlebars");
+const db = require("../models/index");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-// Test for populating db
-const createRecipients = () => {
-    for (let i = 0; i < 10; i++) {
-        db.Recipients.create(
-            {
-                name: 'person ' + i,
-                id_user: 1,
-            }
-        )
-    }
-}
-
-
 module.exports = app => {
+    // On Page load... 
     app.get("/", (req, res) => {
+        // if user is logged in redirect them to the members page.
         if (req.user) {
             res.redirect("/members")
         }
-
+        // Or render out the login page
         res.render("login")
-
     })
+
+    // On login route..
     app.get("/login", function (req, res) {
-        // If the user already has an account send them to the members page
+        // If the user id logged send them to the members page.
         if (req.user) {
             res.redirect("/members");
         }
+        // else render out the login page
         res.render("login");
     });
 
+    // on the register route..
     app.get("/register", (req, res) => {
+        // render out the register page
         res.render("register")
     })
 
+    // On the members route...  
     app.get("/members", isAuthenticated, function (req, res) {
-        // createRecipients()
+        // Checking if the user is authenticated and logged in 
+        // if not this route will not work.
 
+        // render out the members page.
         res.render("members");
-
-
     });
 
-
-
-    // Route for getting some data about our user to be used client side
-    //   app.get("/api/user_data", function(req, res) {
-    //     if (!req.user) {
-    //       // The user is not logged in, send back an empty object
-    //       res.json({});
-    //     } else {
-    //       // Otherwise send back the user's email and id
-    //       // Sending back a password, even a hashed password, isn't a good idea
-    //       res.json({
-    //         email: req.user.email,
-    //         id: req.user.id
-    //       });
-    //     }
-    //   });
-
 }
-
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
-var path = require("path");
-
-// Routes
-// =============================================================
-

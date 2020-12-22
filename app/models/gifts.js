@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Gifts.associate = (models) => {
         Gifts.belongsTo(models.Recipients, {
+            onDelete: "cascade",
             foreignKey: "id_recipient"
         })
     };

@@ -2,6 +2,8 @@
 
 .nav-wrapper {
      background-color: #324b77;
+     z-index: 9999;
+
 }
 
 footer {
@@ -9,6 +11,8 @@ footer {
      bottom: 0;
      width: 100%;
      text-align: left;
+     z-index: 9999;
+
 }
 
 .page-footer {
@@ -100,7 +104,6 @@ body {
 
 .sidenav {
      background-color: #bbd7f5;
-     z-index: -1;
 }
 
 ::placeholder {

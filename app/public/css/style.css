@@ -127,6 +127,16 @@ body {
      border: none;
 }
 
+.recip-style:hover{
+     background-color: #324b77;
+     }
+     
+.recip-style:active{
+background-color: #bbd7f5;
+}
+
+
+
 /* END MEMBERS PAGE */
 
 /*  Snow animation credit goes to the awesome person below!!! */

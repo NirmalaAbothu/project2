@@ -33,7 +33,7 @@ $(document).ready(function () {
                     // li.text(element.name);
 
                     let span = $("<span>");
-                    span.addClass("name");
+                    span.addClass("name sidenav-close");
                     span.attr("data-id", element.id);
                     span.text(element.name);
 

@@ -1,6 +1,5 @@
-
-const exphbs = require('express-handlebars');
-const db = require('../models/index');
+const exphbs = require("express-handlebars");
+const db = require("../models/index");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = app => {
@@ -40,5 +39,3 @@ module.exports = app => {
     });
 
 }
-
-

@@ -35,7 +35,7 @@
   // 
      // Snowglobe animation and christmas countdown credit goes to the awesome person below!!!
      //________________https://codepen.io/cooper5/pen/PoGGXGR ________________________ 
-const countDownDate = new Date("Dec 25, 2020 12:00:00").getTime();
+const countDownDate = new Date("Dec 25, 2021 12:00:00").getTime();
 const x = setInterval(function () {
    let now = new Date().getTime();
    let distance = countDownDate - now;

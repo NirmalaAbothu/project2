@@ -5,6 +5,8 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const passport = require("./app/config/passport");
 
+const compression = require('compression');
+
 const path = require('path')
 
 // Setting up port and requiring models for syncing
@@ -28,9 +30,8 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
-// // Requiring our routes
-// const routes = require('./app/controller/controller');
-// app.use(routes);
+// compress all responses
+app.use(compression())
 
 require("./app/routes/html-routes")(app);
 require("./app/routes/api-routes")(app);
